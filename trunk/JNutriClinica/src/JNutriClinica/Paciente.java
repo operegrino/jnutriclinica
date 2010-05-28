@@ -1,4 +1,9 @@
 package JNutriClinica;
+
+import java.util.Calendar;
+
+import JNutriClinica.Anamnese;
+
 /**
  * Classe Paciente responsavel por guardar as informacoes de um paciente.
  * 
@@ -14,15 +19,16 @@ public class Paciente {
 	private String endereco;
 	private String cpf;
 	private int idade;
-	private String dataDeNascimento;
+	private Calendar dataDeNascimento;
 	private String genero;
 	private String telefone;
 	private float peso;
 	private float altura;
 	private String fatorAtividade;
 	private String motivoDaConsulta;
-	private String dataDaConsulta;
-	private String dataDeRetorno;
+	private Calendar dataDaConsulta;
+	private Calendar dataDeRetorno;
+	private Anamnese anamnese;
 
 	/**
 	 * Construtor de Paciente.
@@ -42,9 +48,9 @@ public class Paciente {
 	 * @param dataDeRetorno
 	 */
 	public Paciente(String nome, String endereco, String cpf, int idade,
-			String dataDeNascimento, String genero, String telefone,
+			Calendar dataDeNascimento, String genero, String telefone,
 			float peso, float altura, String fatorAtividade,
-			String motivoDaConsulta, String dataDaConsulta, String dataDeRetorno) {
+			String motivoDaConsulta, Calendar dataDaConsulta, Calendar dataDeRetorno) {
 
 		if (nome == null || nome.equals("")) {
 			throw new IllegalArgumentException("Nome do cliente invalido");
@@ -62,6 +68,11 @@ public class Paciente {
 		if (altura <= 0) {
 			throw new IllegalArgumentException("Altura Invalida.");
 		}
+		
+		if(dataDeRetorno.before(dataDaConsulta) || dataDeRetorno.equals(dataDaConsulta)){
+			throw new IllegalArgumentException("Data de retorno Invalida.");
+		}
+		
 		this.setNome(nome);
 		this.setEndereco(endereco);
 		this.setCpf(formataCpf(cpf));
@@ -73,7 +84,7 @@ public class Paciente {
 		this.setAltura(altura);
 		this.setFatorAtividade(fatorAtividade);
 		this.setMotivoDaConsulta(motivoDaConsulta);
-		this.setDataDaConsulta(dataDaConsulta);
+		this.setDataDaConsulta(Calendar.getInstance());
 		this.setDataDeRetorno(dataDeRetorno);
 
 	}
@@ -159,14 +170,14 @@ public class Paciente {
 	 * 
 	 * @param novaData
 	 */
-	public void setDataDeNascimento(String novaData) {
+	public void setDataDeNascimento(Calendar novaData) {
 		this.dataDeNascimento = novaData;
 	}
 
 	/**
 	 * @return a dataDeNascimento do paciente.
 	 */
-	public String getDataDeNascimento() {
+	public Calendar getDataDeNascimento() {
 		return dataDeNascimento;
 	}
 
@@ -271,14 +282,14 @@ public class Paciente {
 	 * 
 	 * @param novaDataConsulta
 	 */
-	public void setDataDaConsulta(String NovaDataConsulta) {
-		this.dataDaConsulta = NovaDataConsulta;
+	public void setDataDaConsulta(Calendar calendar) {
+		this.dataDaConsulta = calendar;
 	}
 
 	/**
 	 * @return a dataDaConsulta
 	 */
-	public String getDataDaConsulta() {
+	public Calendar getDataDaConsulta() {
 		return dataDaConsulta;
 	}
 
@@ -287,14 +298,14 @@ public class Paciente {
 	 * 
 	 * @param novaDataRetorno
 	 */
-	public void setDataDeRetorno(String novaDataRetorno) {
+	public void setDataDeRetorno(Calendar novaDataRetorno) {
 		this.dataDeRetorno = novaDataRetorno;
 	}
 
 	/**
 	 * @return a dataDeRetorno.
 	 */
-	public String getDataDeRetorno() {
+	public Calendar getDataDeRetorno() {
 		return dataDeRetorno;
 	}
 
