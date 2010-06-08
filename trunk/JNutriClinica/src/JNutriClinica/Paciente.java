@@ -29,7 +29,8 @@ public class Paciente {
 	private String motivoDaConsulta;
 	private Calendar dataDaConsulta;
 	private Calendar dataDeRetorno;
-	//private Anamnese anamnese;
+
+	// private Anamnese anamnese;
 
 	/**
 	 * Construtor de Paciente.
@@ -46,12 +47,13 @@ public class Paciente {
 	 * @param fatorAtividade
 	 * @param motivoDaConsulta
 	 * @param dataDaConsulta
-	 * @param dataDeRetorno 
+	 * @param dataDeRetorno
 	 */
 	public Paciente(String nome, String endereco, String cpf, int idade,
 			GregorianCalendar dataDeNascimento, String genero, String telefone,
 			float peso, float altura, String fatorAtividade,
-			String motivoDaConsulta, GregorianCalendar dataDaConsulta, GregorianCalendar dataDeRetorno){
+			String motivoDaConsulta, GregorianCalendar dataDaConsulta,
+			GregorianCalendar dataDeRetorno) {
 
 		if (nome == null || nome.equals("")) {
 			throw new IllegalArgumentException("Nome do cliente invalido");
@@ -59,41 +61,42 @@ public class Paciente {
 		if (endereco == null || endereco.equals("")) {
 			throw new IllegalArgumentException("Endereco do cliente invalido");
 		}
-		if (cpf == null || cpf.equals("") || cpf.length() > 11 || cpf.length() < 11
-				|| !cpf.matches("^[0-9]*$")) {
+		if (cpf == null || cpf.equals("") || cpf.length() > 11
+				|| cpf.length() < 11 || !cpf.matches("^[0-9]*$")) {
 			throw new IllegalArgumentException("CPF invalido");
 		}
 		if (idade <= 0) {
 			throw new IllegalArgumentException("Idade invalida.");
 		}
-		if(dataDeNascimento == null){
+		if (dataDeNascimento == null) {
 			throw new IllegalArgumentException("Data de nascimento invalida.");
 		}
-		if (genero == null || genero.equals("")){
+		if (genero == null || genero.equals("")) {
 			throw new IllegalArgumentException("Genero invalido.");
 		}
-		if (telefone == null || telefone.equals("")){
+		if (telefone == null || telefone.equals("")) {
 			throw new IllegalArgumentException("Telefone invalido.");
 		}
-		if (peso <= 0){
+		if (peso <= 0) {
 			throw new IllegalArgumentException("Peso invalido.");
 		}
 		if (altura <= 0) {
 			throw new IllegalArgumentException("Altura invalida.");
 		}
-		if (fatorAtividade == null || fatorAtividade.equals("")){
+		if (fatorAtividade == null || fatorAtividade.equals("")) {
 			throw new IllegalArgumentException("Fator-Atividade invalido.");
 		}
-		if (motivoDaConsulta == null || motivoDaConsulta.equals("")){
+		if (motivoDaConsulta == null || motivoDaConsulta.equals("")) {
 			throw new IllegalArgumentException("Motivo da consulta invalido.");
 		}
-		if (dataDaConsulta == null || dataDaConsulta.after(dataDeRetorno)){
+		if (dataDaConsulta == null || dataDaConsulta.after(dataDeRetorno)) {
 			throw new IllegalArgumentException("Data da consulta invalida.");
 		}
-		if(dataDeRetorno == null || dataDeRetorno.before(dataDaConsulta) || dataDeRetorno.equals(dataDaConsulta)){
+		if (dataDeRetorno == null || dataDeRetorno.before(dataDaConsulta)
+				|| dataDeRetorno.equals(dataDaConsulta)) {
 			throw new IllegalArgumentException("Data de retorno invalida.");
 		}
-		
+
 		this.setNome(nome);
 		this.setEndereco(endereco);
 		this.setCpf(formataCpf(cpf));
@@ -126,7 +129,7 @@ public class Paciente {
 	 * Altera o nome do paciente para um novoNome.
 	 * 
 	 * @param novoNome
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	public void setNome(String novoNome) {
 		this.nome = novoNome;
@@ -330,16 +333,21 @@ public class Paciente {
 	public Calendar getDataDeRetorno() {
 		return dataDeRetorno;
 	}
-	
-	public boolean equals(Object objeto){
-		if (objeto instanceof Paciente){
+
+	public boolean equals(Object objeto) {
+		if (objeto instanceof Paciente) {
 			Paciente paciente = (Paciente) objeto;
-			if (getNome().equals(paciente.getNome()) && getCpf().equals(paciente.getCpf()) && getDataDeNascimento().equals(paciente.getDataDeNascimento()) && getGenero().equals(paciente.getGenero()) && getPeso() == paciente.getPeso() && getAltura() == paciente.getAltura())
+			if (getNome().equals(paciente.getNome())
+					&& getCpf().equals(paciente.getCpf())
+					&& getDataDeNascimento().equals(
+							paciente.getDataDeNascimento())
+					&& getGenero().equals(paciente.getGenero())
+					&& getPeso() == paciente.getPeso()
+					&& getAltura() == paciente.getAltura())
 				return true;
 			else
 				return false;
-		}
-		else
+		} else
 			return false;
 	}
 }
