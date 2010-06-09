@@ -14,7 +14,7 @@
       <data key="d2"><![CDATA[UMLClass]]></data>
       <data key="d3">
         <y:UMLClassNode>
-          <y:Geometry height="462.0" width="199.0" x="50.5" y="44.0"/>
+          <y:Geometry height="641.0" width="199.0" x="-37.5" y="-20.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="57.47265625" x="70.763671875" y="3.0">Paciente</y:NodeLabel>
@@ -33,20 +33,33 @@ motivoDaConsulta: String
 dataDaConsulta: Calendar
 dataDeRetorno: Calendar
 </y:AttributeLabel>
-            <y:MethodLabel>getNome()
+            <y:MethodLabel>formataCpf()
+getNome()
+setNome()
 getEndereco()
+setEndereco()
 getCpf()
+setCpf()
 getIdade()
+setIdade()
 getDataDeNascimento()
+setDataDeNascimento()
 getGenero()
+setGenero()
 getTelefone()
+setTelefone()
 getPeso()
+setPeso()
 getAltura()
+setAltura()
 getFatorAtividade()
+setFatorAtividade()
 getMotivoDaConsuta()
+setMotivoDaConsuta()
 getDataDaConsulta()
+setDataDaConsulta()
 getDataDeRetorno()
-</y:MethodLabel>
+setDataDeRetorno()</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -56,7 +69,7 @@ getDataDeRetorno()
       <data key="d2"><![CDATA[UMLClass]]></data>
       <data key="d3">
         <y:UMLClassNode>
-          <y:Geometry height="352.0" width="203.0" x="417.5" y="45.0"/>
+          <y:Geometry height="414.0" width="203.0" x="455.5" y="-34.0"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="69.7490234375" x="66.62548828125" y="3.0">Anamnese</y:NodeLabel>
@@ -71,16 +84,34 @@ numDeRefeicoesDia: int
 alergiaAlimentar: boolean
 intesidadeDeAtivFisica: enum</y:AttributeLabel>
             <y:MethodLabel>getPesoUsual()
+setPesoUsual()
 getPesoIdeal()
+setPesoIdeal()
 perdeuPeso()
 getSintomasGastroIntestinais()
+setSintomasGastroIntestinais()
 getPatologiaChave()
+setPatologiaChave()
 tomaMedicamentos()
 getNumDeRefeicoesDia()
+setNumDeRefeicoesDia()
 alergiaAlimentar()
-getIntensidadeDeAtivFisica()</y:MethodLabel>
+getIntensidadeDeAtivFisica()
+setIntensidadeDeAtivFisica()</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
+      </data>
+    </node>
+    <node id="n2">
+      <data key="d2"/>
+      <data key="d3">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="230.0" x="161.5" y="-142.0"/>
+          <y:Fill color="#FFFFFF" transparent="false"/>
+          <y:BorderStyle color="#FFFFFF" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.0517578125" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="159.021484375" x="35.4892578125" y="1.97412109375">JNutriClinica - UML</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
       </data>
     </node>
   </graph>
