@@ -85,7 +85,7 @@ public class Anamnese {
 	}
 
 	/**
-	 * @return the sintomasGastrointestinais
+	 * @return  sintomasGI
 	 */
 	public String getSintomasGI() {
 		return sintomasGI;
