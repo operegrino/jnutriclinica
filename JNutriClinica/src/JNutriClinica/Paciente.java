@@ -23,8 +23,8 @@ public class Paciente {
 	private Calendar dataDeNascimento;
 	private String genero;
 	private String telefone;
-	private float peso;
-	private float altura;
+	private double peso;
+	private double altura;
 	private String fatorAtividade;
 	private String motivoDaConsulta;
 	private Calendar dataDaConsulta;
@@ -250,7 +250,7 @@ public class Paciente {
 	/**
 	 * @return o peso do paciente.
 	 */
-	public float getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 
@@ -266,7 +266,7 @@ public class Paciente {
 	/**
 	 * @return a altura do paciente.
 	 */
-	public float getAltura() {
+	public double getAltura() {
 		return altura;
 	}
 
