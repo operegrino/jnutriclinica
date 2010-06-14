@@ -11,8 +11,8 @@ package JNutriClinica;
 
 public class Anamnese {
 
-	private float pesoUsual;
-	private float pesoIdeal;
+	private double pesoUsual;
+	private double pesoIdeal;
 	private boolean perdeuPeso;
 	private String sintomasGI;
 	private String patologiaChave;
@@ -37,7 +37,7 @@ public class Anamnese {
 	/**
 	 * @return the pesoUsual
 	 */
-	public float getPesoUsual() {
+	public double getPesoUsual() {
 		return pesoUsual;
 	}
 
@@ -52,7 +52,7 @@ public class Anamnese {
 	/**
 	 * @return the pesoIdeal
 	 */
-	public float getPesoIdeal() {
+	public double getPesoIdeal() {
 		return pesoIdeal;
 	}
 
