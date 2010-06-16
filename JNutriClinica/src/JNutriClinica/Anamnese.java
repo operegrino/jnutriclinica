@@ -5,7 +5,7 @@ package JNutriClinica;
  * 
  * @author Laercio Vitorino , Antonio Ricardo
  * 
- * @version 1.0
+ * @version 1.1
  * 
  */
 
@@ -16,21 +16,26 @@ public class Anamnese {
 	private boolean perdeuPeso;
 	private String sintomasGI;
 	private String patologiaChave;
+	private boolean tomaMedicamentos;
+	private int medicacoesPorDia;
 
 	public Anamnese(float pesoUsual, float pesoIdeal, boolean perdeuPeso,
-			String sintomasGI, String patologiaChave) {
-		this.setPesoUsual(pesoUsual);
-		this.setPesoIdeal(pesoIdeal);
-		this.setPerdeuPeso(perdeuPeso);
-		this.setSintomasGI(sintomasGI);
-		this.setPatologiaChave(patologiaChave);
+			String sintomasGI, String patologiaChave, boolean tomaMedicamentos,
+			int medicacoesPorDia) {
+		setPesoUsual(pesoUsual);
+		setPesoIdeal(pesoIdeal);
+		setPerdeuPeso(perdeuPeso);
+		setSintomasGI(sintomasGI);
+		setPatologiaChave(patologiaChave);
+		setTomaMedicamentos(tomaMedicamentos);
+		setMedicacoesPorDia(medicacoesPorDia);
 	}
 
 	/**
 	 * @param pesoUsual
 	 *            the pesoUsual to set
 	 */
-	public void setPesoUsual(float pesoUsual) {
+	public void setPesoUsual(double pesoUsual) {
 		this.pesoUsual = pesoUsual;
 	}
 
@@ -45,7 +50,7 @@ public class Anamnese {
 	 * @param pesoIdeal
 	 *            the pesoIdeal to set
 	 */
-	public void setPesoIdeal(float pesoIdeal) {
+	public void setPesoIdeal(double pesoIdeal) {
 		this.pesoIdeal = pesoIdeal;
 	}
 
@@ -106,10 +111,38 @@ public class Anamnese {
 		return patologiaChave;
 	}
 
+	/**
+	 * @param tomaMedicamentos the tomaMedicamentos to set
+	 */
+	public void setTomaMedicamentos(boolean tomaMedicamentos) {
+		this.tomaMedicamentos = tomaMedicamentos;
+	}
+
+	/**
+	 * @return the tomaMedicamentos
+	 */
+	public boolean isTomaMedicamentos() {
+		return tomaMedicamentos;
+	}
+
+	/**
+	 * @param medicacoesPorDia the medicacoesPorDia to set
+	 */
+	public void setMedicacoesPorDia(int medicacoesPorDia) {
+		this.medicacoesPorDia = medicacoesPorDia;
+	}
+
+	/**
+	 * @return the medicacoesPorDia
+	 */
+	public int getMedicacoesPorDia() {
+		return medicacoesPorDia;
+	}
+
 	public enum patologiaChave {
 		DIABETES, CARDIOPATIA, PATOLOGIA_NO_FIGADO, PATOLOGIA_RENAL;
 	}
 
-	// TODO: Implementar os demais metodos desta classe
+
 
 }
