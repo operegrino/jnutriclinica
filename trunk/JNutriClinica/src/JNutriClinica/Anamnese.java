@@ -13,11 +13,13 @@ public class Anamnese {
 
 	private double pesoUsual;
 	private double pesoIdeal;
+	private double altura;
 	private boolean perdeuPeso;
 	private String sintomasGI;
 	private String patologiaChave;
 	private boolean tomaMedicamentos;
 	private int medicacoesPorDia;
+	
 
 	public Anamnese(float pesoUsual, float pesoIdeal, boolean perdeuPeso,
 			String sintomasGI, String patologiaChave, boolean tomaMedicamentos,
@@ -141,6 +143,11 @@ public class Anamnese {
 
 	public enum patologiaChave {
 		DIABETES, CARDIOPATIA, PATOLOGIA_NO_FIGADO, PATOLOGIA_RENAL;
+	}
+
+	public double getAltura() {
+		
+		return altura;
 	}
 
 
