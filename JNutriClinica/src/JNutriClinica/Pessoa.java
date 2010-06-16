@@ -3,70 +3,146 @@ package JNutriClinica;
 import java.util.Calendar;
 
 /**
- * Interface Pessoa
+ * 
+ * Classe Pessoa
  * 
  * @author Antonio Ricardo
  * 
+ * @version 1.1
+ * 
  */
-public interface Pessoa {
 
-	/**
-	 * Retorna o nome desta Pessoa.
-	 */
-	public String getNome();
+public class Pessoa {
 
-	/**
-	 * Altera o nome desta Pessoa.
-	 */
-	public void setNome(String novoNome);
+	private String nome;
+	protected int idade;
+	private String cpf;
+	private String endereco;
+	private Calendar dataDeNascimento;
+	private String telefone;
+	protected Anamnese anamnese;
 
-	/**
-	 * Retorna a idade desta Pessoa.
-	 */
-	public int getIdade();
 
-	/**
-	 * Altera a idade desta Pessoa.
-	 */
-	public void setIdade(int novaIdade);
+	public Pessoa(String nome, int idade, String cpf, String endereco,
+			Calendar dataDeNascimento, String telefone, Anamnese anamnese)throws Exception {
+		setNome(nome);
+		setIdade(idade);
+		setCpf(formataCpf(cpf));
+		setEndereco(endereco);
+		setDataDeNascimento(dataDeNascimento);
+		setTelefone(telefone);
+		setAnamnese(anamnese);
 
-	/**
-	 * Retorna o cpf desta Pessoa.
-	 */
-	public String getCpf();
+	}
 
-	/**
-	 * Altera o cpf desta Pessoa.
-	 */
-	public void setCpf(String novoCpf);
-
-	/**
-	 * Retorna a data de nascimento desta Pessoa.
-	 */
-	public Calendar getDataDeNascimento();
-
-	/**
-	 * Altera a data de nascimento desta Pessoa.
-	 */
-	public void setDataDeNascimento(Calendar novaData);
-
-	/**
-	 * Retorna o endereço desta Pessoa.
-	 */
-	public String getEndereco();
 	
-	/**
-	 * Altera o endereço desta Pessoa.
-	 */
-	public void setEndereco(String novoEndereco);
+	public String getCpf() {
+
+		return cpf;
+	}
+
 	
-	/**
-	 * Retorna o telefone desta Pessoa.
-	 */
-	public String getTelefone();
+	public Calendar getDataDeNascimento() {
+
+		return dataDeNascimento;
+	}
+
+
+	public String getEndereco() {
+
+		return endereco;
+	}
+
+
+	public int getIdade() {
+
+		return idade;
+	}
+
+
+	public String getNome() {
+
+		return nome;
+	}
+
+
+	public String getTelefone() {
+		return telefone;
+
+	}
+
+
+	public void setCpf(String novoCpf) {
+		this.cpf = novoCpf;
+
+	}
+
 	
+	public void setDataDeNascimento(Calendar novaData) {
+		this.dataDeNascimento = novaData;
+
+	}
+
+	
+	public void setEndereco(String novoEndereco) {
+		this.endereco = novoEndereco;
+
+	}
+
+	
+	public void setIdade(int novaIdade)throws Exception {
+
+		this.idade = novaIdade;
+
+	}
+
+	
+	public void setNome(String novoNome)throws Exception {
+		this.nome = novoNome;
+
+	}
+
+	
+	public void setTelefone(String novoTelefone) {
+		this.telefone = novoTelefone;
+
+	}
+	
+	private String formataCpf(String cpf) {
+		return (cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "."
+				+ cpf.substring(6, 9) + "-" + cpf.substring(9, 11));
+	}
+
+	public boolean isCrianca(){
+		if(idade >= 18){
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean isIdoso(){
+		if (idade >= 65){
+			return true;
+		}
+		return false;
+		
+	}
+
+
 	/**
-	 * Altera o telefone desta Pessoa.
+	 * @param anamnese the anamnese to set
 	 */
-	public void setTelefone(String novoTelefone);
+	public void setAnamnese(Anamnese anamnese) {
+		this.anamnese = anamnese;
+	}
+
+
+	/**
+	 * @return the anamnese
+	 */
+	public Anamnese getAnamnese() {
+		return anamnese;
+	}
+
+	
 }

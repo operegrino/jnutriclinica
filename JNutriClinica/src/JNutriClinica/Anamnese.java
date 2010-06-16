@@ -144,6 +144,10 @@ public class Anamnese {
 	public enum patologiaChave {
 		DIABETES, CARDIOPATIA, PATOLOGIA_NO_FIGADO, PATOLOGIA_RENAL;
 	}
+	
+	public enum atividadeFisica {
+		LEVE , MODERADA, INTENSA, APOSENTADO
+	}
 
 	public double getAltura() {
 		
