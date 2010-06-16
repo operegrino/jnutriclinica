@@ -2,6 +2,15 @@ package JNutriClinica;
 
 import java.util.Calendar;
 
+/**
+ * Classe Mulher extendida de Pessoa e implementando a Interface Paciente.
+ * 
+ * @author Antonio Ricardo
+ * 
+ * @version 1.1
+ *
+ */
+
 public class Mulher extends Pessoa implements Paciente {
 
 	public Mulher(String nome, int idade, String cpf, String endereco,
@@ -13,7 +22,6 @@ public class Mulher extends Pessoa implements Paciente {
 
 	@Override
 	public double getFatorAtividadeFisica() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
