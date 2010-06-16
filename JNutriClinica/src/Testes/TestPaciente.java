@@ -1,10 +1,12 @@
-package JNutriClinica;
+package Testes;
 
 import java.util.GregorianCalendar;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import JNutriClinica.Paciente;
 
 
 public class TestPaciente {
