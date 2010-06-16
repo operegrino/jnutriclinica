@@ -3,7 +3,7 @@ package JNutriClinica;
 import java.util.Calendar;
 
 /**
- * Classe Homem - Um tipo de paciente.
+ * Classe Homem extendida de Pessoa e implementando a Interface Paciente.
  * 
  * @author Antonio Ricardo
  * 
