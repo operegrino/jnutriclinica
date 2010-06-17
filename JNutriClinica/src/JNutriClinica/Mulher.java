@@ -17,7 +17,7 @@ public class Mulher extends Pessoa implements Paciente {
 			Calendar dataDeNascimento, String telefone, Anamnese anamnese)
 			throws Exception {
 		super(nome, idade, cpf, endereco, dataDeNascimento, telefone, anamnese);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
@@ -50,13 +50,13 @@ public class Mulher extends Pessoa implements Paciente {
 
 	@Override
 	public double getTMB() {
-		if (18 <= idade && idade < 30) {
+		if (isAdultoJovem()) {
 			return 14.7 * anamnese.getPesoUsual() + 496;
 		}
-		if (30 <= idade && idade < 60) {
+		if (isAdulto()) {
 			return 8.7 * anamnese.getPesoUsual() + 829;
 		}
-		if (idade >= 60) {
+		if (isIdoso()) {
 			return 10.5 * anamnese.getPesoUsual() + 596;
 		}
 		return 0;
