@@ -21,7 +21,7 @@ public class Anamnese {
 	private int medicacoesPorDia;
 	
 
-	public Anamnese(float pesoUsual, float pesoIdeal, boolean perdeuPeso,
+	public Anamnese(double pesoUsual, double pesoIdeal, boolean perdeuPeso,
 			String sintomasGI, String patologiaChave, boolean tomaMedicamentos,
 			int medicacoesPorDia) {
 		setPesoUsual(pesoUsual);
