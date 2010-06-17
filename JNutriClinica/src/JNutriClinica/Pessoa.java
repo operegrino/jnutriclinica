@@ -164,7 +164,7 @@ public class Pessoa {
 	}
 
 	/**
-	 * Verifica se a Pessoa eh uma crianca
+	 * Verifica se a Pessoa eh considerada Crianca.
 	 * 
 	 * @return boolean
 	 */
@@ -176,7 +176,7 @@ public class Pessoa {
 	}
 
 	/**
-	 * Verifica se a Pessoa eh um idoso.
+	 * Verifica se a Pessoa eh considerada Idosa.
 	 * 
 	 * @return boolean
 	 */
@@ -186,6 +186,30 @@ public class Pessoa {
 		}
 		return false;
 
+	}
+
+	/**
+	 * Verifica se a Pessoa eh considerada Adulta Jovem.
+	 * 
+	 * @return boolean
+	 */
+	public boolean isAdultoJovem() {
+		if (18 <= idade && idade < 30) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Metodo que confere se a Pessoa eh considerada Adulta.
+	 * 
+	 * @return boolean
+	 */
+	public boolean isAdulto() {
+		if (30 <= idade && idade < 60) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
