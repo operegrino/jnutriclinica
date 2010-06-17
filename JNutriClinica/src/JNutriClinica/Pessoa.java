@@ -49,8 +49,7 @@ public class Pessoa {
 		return endereco;
 	}
 
-	public int getIdade() throws Exception {
-
+	public int getIdade(){
 		return idade;
 	}
 
