@@ -1,5 +1,7 @@
 package JNutriClinica;
 
+import java.util.Calendar;
+
 /**
  * Classe Consulta
  * 
@@ -13,11 +15,29 @@ public class Consulta {
 	
 	private Paciente paciente;
 	private Anamnese anamnese;
+	private String fatorAtividade;
+	private String motivoDaConsulta;
+	private Calendar dataDaConsulta;
+	private Calendar dataDeRetorno;
 	
-	
-	public Consulta(Paciente paciente, Anamnese anamnese){
+	/**
+	 * @param fatorAtividade
+	 * @param motivoDaConsulta
+	 * @param dataDaConsulta
+	 * @param dataDeRetorno
+	 */
+	public Consulta(Paciente paciente, Anamnese anamnese, String fatorAtividade, String motivoDaConsulta, Calendar dataDaConsulta,
+			Calendar dataDeRetorno){
+		try{
 		setPaciente(paciente);
 		setAnamnese(anamnese);
+		setFatorAtividade(fatorAtividade);
+		setMotivoDaConsulta(motivoDaConsulta);
+		setDataDaConsulta(dataDaConsulta);
+		setDataDeRetorno(dataDeRetorno);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -27,7 +47,10 @@ public class Consulta {
 	 * 
 	 * @param paciente the paciente to set
 	 */
-	public void setPaciente(Paciente paciente) {
+	public void setPaciente(Paciente paciente)throws Exception {
+		if(paciente == null){
+			throw new IllegalArgumentException("paciente invalido.");
+		}
 		this.paciente = paciente;
 	}
 
@@ -48,7 +71,10 @@ public class Consulta {
 	 * 
 	 * @param anamnese
 	 */
-	public void setAnamnese(Anamnese anamnese) {
+	public void setAnamnese(Anamnese anamnese)throws Exception {
+		if(anamnese ==null){
+			throw new IllegalArgumentException("Anamnese Invalida");
+		}
 		this.anamnese = anamnese;
 	}
 
@@ -61,5 +87,77 @@ public class Consulta {
 	public Anamnese getAnamnese() {
 		return anamnese;
 	}
+
+
+	/**
+	 * @param fatorAtividade the fatorAtividade to set
+	 */
+	public void setFatorAtividade(String fatorAtividade)throws Exception {
+		if(fatorAtividade == null || fatorAtividade == ""){
+			throw new IllegalArgumentException("Campo nulo ou vazio");
+		}
+		this.fatorAtividade = fatorAtividade;
+	}
+
+
+	/**
+	 * @return the fatorAtividade
+	 */
+	public String getFatorAtividade() {
+		return fatorAtividade;
+	}
+
+
+	/**
+	 * @param motivoDaConsulta the motivoDaConsulta to set
+	 */
+	public void setMotivoDaConsulta(String motivoDaConsulta)throws Exception {
+		if(motivoDaConsulta == null || motivoDaConsulta == ""){
+			throw new IllegalArgumentException("Campo nulo ou vazio");
+		}
+		this.motivoDaConsulta = motivoDaConsulta;
+	}
+
+
+	/**
+	 * @return the motivoDaConsulta
+	 */
+	public String getMotivoDaConsulta() {
+		return motivoDaConsulta;
+	}
+
+
+	/**
+	 * @param dataDaConsulta the dataDaConsulta to set
+	 */
+	public void setDataDaConsulta(Calendar dataDaConsulta) {
+		this.dataDaConsulta = dataDaConsulta;
+	}
+
+
+	/**
+	 * @return the dataDaConsulta
+	 */
+	public Calendar getDataDaConsulta() {
+		return dataDaConsulta;
+	}
+
+
+	/**
+	 * @param dataDeRetorno the dataDeRetorno to set
+	 */
+	public void setDataDeRetorno(Calendar dataDeRetorno) {
+		this.dataDeRetorno = dataDeRetorno;
+	}
+
+
+	/**
+	 * @return the dataDeRetorno
+	 */
+	public Calendar getDataDeRetorno() {
+		return dataDeRetorno;
+	}
+	
+	
 
 }
