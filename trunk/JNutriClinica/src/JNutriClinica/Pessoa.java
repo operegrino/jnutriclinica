@@ -24,7 +24,8 @@ public class Pessoa {
 
 	public Pessoa(String nome, int idade, String cpf, String endereco,
 			Calendar dataDeNascimento, String telefone, Anamnese anamnese)
-			throws Exception {
+			 {
+		try{
 		setNome(nome);
 		setIdade(idade);
 		setCpf(formataCpf(cpf));
@@ -32,6 +33,10 @@ public class Pessoa {
 		setDataDeNascimento(dataDeNascimento);
 		setTelefone(formataTelefone(telefone));
 		setAnamnese(anamnese);
+		}catch(Exception e){
+			e.getMessage();
+			
+		}
 
 	}
 
@@ -49,7 +54,7 @@ public class Pessoa {
 		return endereco;
 	}
 
-	public int getIdade(){
+	public int getIdade() {
 		return idade;
 	}
 
@@ -73,6 +78,7 @@ public class Pessoa {
 
 	// tratar excecao para este metodo.
 	public void setDataDeNascimento(Calendar novaData) {
+
 		this.dataDeNascimento = novaData;
 
 	}
@@ -115,7 +121,7 @@ public class Pessoa {
 	 * 
 	 * @throws IllegalArgumentException
 	 */
-	public void setNome(String novoNome) throws Exception {
+	public void setNome(String novoNome) {
 		if (nome == null || nome == "") {
 			throw new IllegalArgumentException("nome invalido.");
 		}
