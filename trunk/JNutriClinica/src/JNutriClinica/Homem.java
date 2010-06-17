@@ -52,13 +52,13 @@ public class Homem extends Pessoa implements Paciente {
 
 	@Override
 	public double getTMB() {
-		if (18 <= idade && idade < 30) {
+		if (isAdultoJovem()) {
 			return 15.3 * anamnese.getPesoUsual() + 679;
 		}
-		if (30 <= idade && idade < 60) {
+		if (isAdulto()) {
 			return 11.6 * anamnese.getPesoUsual() + 879;
 		}
-		if (idade >= 60) {
+		if (isIdoso()) {
 			return 13.5 * anamnese.getPesoUsual() + 487;
 		}
 		return 0;
