@@ -18,7 +18,7 @@ public class TestPessoa {
 
 	@Before
 	public void CriaPacientes() throws Exception {
-		anamnese = new Anamnese(70.6, 65.4, false, "dor", "muita dor", true, 3);
+		anamnese = new Anamnese(70.6, 65.4, false, 0, 0, "dor", "muita dor", true, 3);
 		pessoa1 = new Pessoa("Jose Antonio da Silva", 40, "12345678911",
 				"Rua Nove de Novembro, Nº 235", new GregorianCalendar(1985,
 						01, 10), "9188-2525", anamnese);

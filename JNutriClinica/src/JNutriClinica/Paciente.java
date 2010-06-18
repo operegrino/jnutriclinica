@@ -66,4 +66,13 @@ public interface Paciente {
 	 */
 	public double getRelacaoCinturaQuadril();
 	
+	
+	
+	/**
+	 * Retorna uma constante em relacao a Intensidade que o Paciente frequenta sua atividade fisica.
+	 * 
+	 * @return
+	 */
+	public double getAtividadeFisica();
+	
 }
