@@ -36,16 +36,17 @@ public class Mulher extends Pessoa implements Paciente {
 		return anamnese.getAltura() * anamnese.getAltura() * 20.8;
 	}
 
+	
+	// Faltam dados para implemntar este metodo.
 	@Override
 	public double getPregasCutaneas() {
-
 		return 0;
 	}
 
 	@Override
 	public double getRelacaoCinturaQuadril() {
 
-		return 0;
+		return anamnese.getCintura() / anamnese.getQuadril();
 	}
 
 	@Override
@@ -64,6 +65,12 @@ public class Mulher extends Pessoa implements Paciente {
 
 	@Override
 	public double getVET() {
+		return getTMB()*getAtividadeFisica();
+	}
+
+	@Override
+	public double getAtividadeFisica() {
+		
 		return 0;
 	}
 

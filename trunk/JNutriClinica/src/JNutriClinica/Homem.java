@@ -47,7 +47,7 @@ public class Homem extends Pessoa implements Paciente {
 	@Override
 	public double getRelacaoCinturaQuadril() {
 
-		return 0;
+		return anamnese.getCintura() / anamnese.getQuadril();
 	}
 
 	@Override
@@ -66,6 +66,11 @@ public class Homem extends Pessoa implements Paciente {
 
 	@Override
 	public double getVET() {
+		return getTMB()*getAtividadeFisica();
+	}
+
+	@Override
+	public double getAtividadeFisica() {
 		return 0;
 	}
 

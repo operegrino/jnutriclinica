@@ -121,7 +121,7 @@ public class Pessoa {
 	 * 
 	 * @throws IllegalArgumentException
 	 */
-	public void setNome(String novoNome)throws Exception {
+	public void setNome(String novoNome) {
 		if (nome == null || nome == "") {
 			throw new IllegalArgumentException("nome invalido.");
 		}

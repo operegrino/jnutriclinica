@@ -15,22 +15,27 @@ public class Anamnese {
 	private double pesoIdeal;
 	private double altura;
 	private boolean perdeuPeso;
+	private double cintura;
+	private double quadril;
 	private String sintomasGI;
 	private String patologiaChave;
 	private boolean tomaMedicamentos;
 	private int medicacoesPorDia;
-	
 
 	public Anamnese(double pesoUsual, double pesoIdeal, boolean perdeuPeso,
-			String sintomasGI, String patologiaChave, boolean tomaMedicamentos,
+			double cintura, double quadril, String sintomasGI,
+			String patologiaChave, boolean tomaMedicamentos,
 			int medicacoesPorDia) {
 		setPesoUsual(pesoUsual);
 		setPesoIdeal(pesoIdeal);
 		setPerdeuPeso(perdeuPeso);
+		setCintura(cintura);
+		setQuadril(quadril);
 		setSintomasGI(sintomasGI);
 		setPatologiaChave(patologiaChave);
 		setTomaMedicamentos(tomaMedicamentos);
 		setMedicacoesPorDia(medicacoesPorDia);
+		
 	}
 
 	/**
@@ -92,7 +97,7 @@ public class Anamnese {
 	}
 
 	/**
-	 * @return  sintomasGI
+	 * @return sintomasGI
 	 */
 	public String getSintomasGI() {
 		return sintomasGI;
@@ -114,7 +119,8 @@ public class Anamnese {
 	}
 
 	/**
-	 * @param tomaMedicamentos the tomaMedicamentos to set
+	 * @param tomaMedicamentos
+	 *            the tomaMedicamentos to set
 	 */
 	public void setTomaMedicamentos(boolean tomaMedicamentos) {
 		this.tomaMedicamentos = tomaMedicamentos;
@@ -128,7 +134,8 @@ public class Anamnese {
 	}
 
 	/**
-	 * @param medicacoesPorDia the medicacoesPorDia to set
+	 * @param medicacoesPorDia
+	 *            the medicacoesPorDia to set
 	 */
 	public void setMedicacoesPorDia(int medicacoesPorDia) {
 		this.medicacoesPorDia = medicacoesPorDia;
@@ -144,16 +151,47 @@ public class Anamnese {
 	public enum patologiaChave {
 		DIABETES, CARDIOPATIA, PATOLOGIA_NO_FIGADO, PATOLOGIA_RENAL;
 	}
-	
+
 	public enum atividadeFisica {
-		LEVE , MODERADA, INTENSA, APOSENTADO
+		LEVE, MODERADA, INTENSA, APOSENTADO
 	}
 
 	public double getAltura() {
-		
+
 		return altura;
 	}
 
+	/**
+	 * @param cintura
+	 *            the cintura to set
+	 */
+	public void setCintura(double cintura) {
+		this.cintura = cintura;
+	}
 
+	/**
+	 * @return the cintura
+	 */
+	public double getCintura() {
+		return cintura;
+	}
+
+	/**
+	 * @param quadril
+	 *            the quadril to set
+	 */
+	public void setQuadril(double quadril) {
+		if(quadril <= 0){
+			throw new IllegalArgumentException("Valor incorreto.");
+		}
+		this.quadril = quadril;
+	}
+
+	/**
+	 * @return the quadril
+	 */
+	public double getQuadril() {
+		return quadril;
+	}
 
 }
