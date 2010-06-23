@@ -5,9 +5,9 @@ import java.util.Calendar;
 /**
  * Classe Consulta
  * 
- * @author Antonio Ricardo
+ * @author Antônio Ricardo e Laércio Vitorino
  * 
- * @version 1.0
+ * @version 1.2
  *
  */
 
