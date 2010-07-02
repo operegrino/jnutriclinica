@@ -40,14 +40,17 @@ public class Anamnese {
 
 	/**
 	 * @param pesoUsual
-	 *            the pesoUsual to set
+	 *            altera o peso usual para um novo peso.
 	 */
-	public void setPesoUsual(double pesoUsual) {
+	public void setPesoUsual(double pesoUsual)throws Exception {
+		if(pesoUsual =< 0){
+			throw new Exception("valor invalido.");
+		}
 		this.pesoUsual = pesoUsual;
 	}
 
 	/**
-	 * @return the pesoUsual
+	 * @return o pesoUsual.
 	 */
 	public double getPesoUsual() {
 		return pesoUsual;
@@ -55,14 +58,17 @@ public class Anamnese {
 
 	/**
 	 * @param pesoIdeal
-	 *            the pesoIdeal to set
+	 *            altera o peso ideal para um novo peso.
 	 */
-	public void setPesoIdeal(double pesoIdeal) {
+	public void setPesoIdeal(double pesoIdeal)throws Exception {
+		if(pesoIdeal =< 0){
+			throw new Exception("valor invalido.");
+		}
 		this.pesoIdeal = pesoIdeal;
 	}
 
 	/**
-	 * @return the pesoIdeal
+	 * @return o pesoIdeal
 	 */
 	public double getPesoIdeal() {
 		return pesoIdeal;
@@ -70,7 +76,7 @@ public class Anamnese {
 
 	/**
 	 * @param perdeuPeso
-	 *            the perdeuPeso to set
+	 *            altera o boolean perdeuPeso
 	 */
 	public void setPerdeuPeso(boolean perdeuPeso) {
 		if (perdeuPeso == false) {
@@ -82,15 +88,18 @@ public class Anamnese {
 	}
 
 	/**
-	 * @return the perdeuPeso
+	 * Retorna um boolean para conferir se o Paciente perdeu peso.
+	 * 
+	 * @return  perdeuPeso
 	 */
 	public boolean isPerdeuPeso() {
 		return perdeuPeso;
 	}
 
 	/**
+	 * 
 	 * @param sintomasGastrointestinais
-	 *            the sintomasGastrointestinais to set
+	 *            Altera os sintomasGI para um novo sintomasGI
 	 */
 	public void setSintomasGI(String sintomasGI) {
 		this.sintomasGI = sintomasGI;
@@ -105,14 +114,15 @@ public class Anamnese {
 
 	/**
 	 * @param patologiaChave
-	 *            the patologiaChave to set
+	 *            altera a patologiaChave para uma nova patologiaChave
 	 */
 	public void setPatologiaChave(String patologiaChave) {
 		this.patologiaChave = patologiaChave;
 	}
 
 	/**
-	 * @return the patologiaChave
+	 * 
+	 * @return a patologiaChave
 	 */
 	public String getPatologiaChave() {
 		return patologiaChave;
@@ -120,14 +130,14 @@ public class Anamnese {
 
 	/**
 	 * @param tomaMedicamentos
-	 *            the tomaMedicamentos to set
+	 *            altera o boolean tomaMedicamentos.
 	 */
 	public void setTomaMedicamentos(boolean tomaMedicamentos) {
 		this.tomaMedicamentos = tomaMedicamentos;
 	}
 
 	/**
-	 * @return the tomaMedicamentos
+	 * @return tomaMedicamentos
 	 */
 	public boolean isTomaMedicamentos() {
 		return tomaMedicamentos;
@@ -137,12 +147,15 @@ public class Anamnese {
 	 * @param medicacoesPorDia
 	 *            the medicacoesPorDia to set
 	 */
-	public void setMedicacoesPorDia(int medicacoesPorDia) {
+	public void setMedicacoesPorDia(int medicacoesPorDia)throws Exception {
+		if(medicacoesPorDia < 0){
+			throw new Exception("valor invalido.");
+		}
 		this.medicacoesPorDia = medicacoesPorDia;
 	}
 
 	/**
-	 * @return the medicacoesPorDia
+	 * @return medicacoesPorDia
 	 */
 	public int getMedicacoesPorDia() {
 		return medicacoesPorDia;
@@ -163,14 +176,19 @@ public class Anamnese {
 
 	/**
 	 * @param cintura
-	 *            the cintura to set
+	 *            Altera a medida da cintura de um Paciente.
 	 */
-	public void setCintura(double cintura) {
+	public void setCintura(double cintura)throws Exception{
+		if(cintura <= 0){
+			throw new Exception("valor invalido.");
+		}
 		this.cintura = cintura;
 	}
 
 	/**
-	 * @return the cintura
+	 * Retorna a medida (em centimetros) da cintura de um Paciente.
+	 * 
+	 * @return cintura
 	 */
 	public double getCintura() {
 		return cintura;
@@ -178,7 +196,7 @@ public class Anamnese {
 
 	/**
 	 * @param quadril
-	 *            the quadril to set
+	 *            Altera a medida do quadril de um Paciente para uma nova medida.
 	 */
 	public void setQuadril(double quadril) {
 		if(quadril <= 0){
@@ -188,7 +206,9 @@ public class Anamnese {
 	}
 
 	/**
-	 * @return the quadril
+	 * A medida do quadril (em centimetros) de um Paciente.
+	 * 
+	 * @return quadril
 	 */
 	public double getQuadril() {
 		return quadril;

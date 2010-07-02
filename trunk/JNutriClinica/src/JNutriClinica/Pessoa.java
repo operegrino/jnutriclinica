@@ -43,7 +43,7 @@ public class Pessoa {
 	 * @param anamnese
 	 * 			A anamnese da pessoa.
 	 * @throws Exception
-	 * 			Lança exceção caso algum dos valores passados como parâmetros sejam nulos ou vazios.
+	 * 			Lanca excecao caso algum dos valores passados como parametros sejam nulos ou vazios.
 	 */
 	public Pessoa(String nome, int idade, String cpf, String endereco,
 			Calendar dataDeNascimento, String telefone, Anamnese anamnese) throws Exception{
@@ -119,7 +119,7 @@ public class Pessoa {
 	 * @param novoNome
 	 * 			O nome da pessoa.
 	 * @throws Exception
-	 * 			Lança uma exceção caso o nome passado como parâmetro seja nulo ou vazio.
+	 * 			Lanca uma excecao caso o nome passado como parâmetro seja nulo ou vazio.
 	 */
 	public void setNome(String novoNome)throws Exception {
 		if (novoNome == null || novoNome.equals("")) 
@@ -134,7 +134,7 @@ public class Pessoa {
 	 * @param novaIdade
 	 * 			A idade da pessoa.
 	 * @throws Exception
-	 * 			Lança uma exceção caso a idade passada como parâmetro seja negativa.
+	 * 			Lanca uma excecao caso a idade passada como parâmetro seja negativa.
 	 */
 	public void setIdade(int novaIdade) throws Exception {
 		if (novaIdade < 0) 
@@ -149,8 +149,8 @@ public class Pessoa {
 	 * @param novoCpf
 	 * 			O CPF da pessoa.
 	 * @throws Exception
-	 * 			Lança uma exceção caso o CPF passado como parâmetro seja nulo, vazio, se seu tamanho for menor ou maior que 11 ou se seu
-	 * 			formato não bater com o formato padrão de CPF.
+	 * 			Lanca uma exceção caso o CPF passado como parametro seja nulo, vazio, se seu tamanho for menor ou maior que 11 ou se seu
+	 * 			formato não bater com o formato padrao de CPF.
 	 */
 	public void setCpf(String novoCpf) throws Exception {
 		if (novoCpf == null || novoCpf == "" || novoCpf.length() > 11 || novoCpf.length() < 11 || !novoCpf.matches("^[0-9]*$"))
@@ -160,12 +160,12 @@ public class Pessoa {
 	}
 	
 	/**
-	 * Seta o endereço da pessoa.
+	 * Seta o endereco da pessoa.
 	 * 
 	 * @param novoEndereco
-	 * 			O endereço da pessoa.
+	 * 			O endereco da pessoa.
 	 * @throws Exception
-	 * 			Lança uma exceção caso o endereço passado como parâmetro seja nulo ou vazio.
+	 * 			Lanca uma excecao caso o endereço passado como parametro seja nulo ou vazio.
 	 */
 	public void setEndereco(String novoEndereco) throws Exception {
 		if (novoEndereco == null || novoEndereco == "") 
