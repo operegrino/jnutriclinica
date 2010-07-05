@@ -2,6 +2,7 @@ package JNutriClinica;
 
 import JNutriClinica.Anamnese.atividadeFisica;
 
+
 /**
  * 
  * Interface Paciente implementada pelas classes Homem e Mulher.

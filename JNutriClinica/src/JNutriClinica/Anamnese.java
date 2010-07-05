@@ -11,7 +11,6 @@ package JNutriClinica;
 
 public class Anamnese {
 	private double pesoUsual;
-	private double pesoIdeal;
 	private double altura;
 	private boolean perdeuPeso;
 	private double cintura;
@@ -27,7 +26,6 @@ public class Anamnese {
 			int medicacoesPorDia) {
 		try {
 			setPesoUsual(pesoUsual);
-			setPesoIdeal(pesoIdeal);
 			setPerdeuPeso(perdeuPeso);
 			setCintura(cintura);
 			setQuadril(quadril);
@@ -57,24 +55,6 @@ public class Anamnese {
 	 */
 	public double getPesoUsual() {
 		return pesoUsual;
-	}
-
-	/**
-	 * @param pesoIdeal
-	 *            altera o peso ideal para um novo peso.
-	 */
-	public void setPesoIdeal(double pesoIdeal)throws Exception {
-		if(pesoIdeal <= 0 ){
-			throw new Exception("valor invalido.");
-		}
-		this.pesoIdeal = pesoIdeal;
-	}
-
-	/**
-	 * @return o pesoIdeal
-	 */
-	public double getPesoIdeal() {
-		return pesoIdeal;
 	}
 
 	/**
@@ -167,10 +147,12 @@ public class Anamnese {
 	public enum patologiaChave {
 		DIABETES, CARDIOPATIA, PATOLOGIA_NO_FIGADO, PATOLOGIA_RENAL;
 	}
-
+	
 	public enum atividadeFisica {
 		LEVE, MODERADA, INTENSA, APOSENTADO
 	}
+
+
 
 	public double getAltura() {
 

@@ -7,6 +7,7 @@ import JNutriClinica.Anamnese.atividadeFisica;
 
 
 
+
 /**
  * Classe Mulher, que herda da classe Pessoa e implementa a Interface Paciente.
  * 
@@ -51,14 +52,18 @@ public class Mulher extends Pessoa implements Paciente {
 
 
 
+
+	
 	/**
 	 * 
-	 * Enum com os tipos de atividade fisica que uma mulher pode apresentar.
-	 * 
+	 * Enum dos tipos de classificacao em relacao ao IMC de uma Mulher.
+	 *
 	 */
-	public enum fatorAtividadeFisica {
-		LEVE, MODERADA, INTENSA, APOSENTADA;
+	
+	public enum classificacaoIMC{
+		MAGREZA, ADEQUADO, EXCESSO_DE_PESO, OBESIDADE
 	}
+	
 
 	/**
 	 * Recupera o IMC(Indice de Massa Corporea) da mulher.
@@ -74,7 +79,7 @@ public class Mulher extends Pessoa implements Paciente {
 	/**
 	 * Recupera o peso teorico da mulher.
 	 * 
-	 * @return O peso teorico da mulher.
+	 * @return O peso ideal para esta Mulher.
 	 */
 	@Override
 	public double getPesoTeorico() {
@@ -140,19 +145,38 @@ public class Mulher extends Pessoa implements Paciente {
 
 	@Override
 	public double getFatorAtividadeFisica() {
-		if (atividadeFisica.equals(fatorAtividadeFisica.LEVE)){
+		if (atividadeFisica.equals(atividadeFisica.LEVE)){
 			return 1.56;
 		}
-		else if (atividadeFisica.equals(fatorAtividadeFisica.MODERADA)){
+		else if (atividadeFisica.equals(atividadeFisica.MODERADA)){
 			return 1.64;
 		}
-		else if (atividadeFisica.equals(fatorAtividadeFisica.INTENSA)){
+		else if (atividadeFisica.equals(atividadeFisica.INTENSA)){
 			return 1.82;
 		}
-		else if (atividadeFisica.equals(fatorAtividadeFisica.APOSENTADA)){
+		else if (atividadeFisica.equals(atividadeFisica.APOSENTADO)){
 			return 1.51;
 		}
 		return 0;
+	}
+	
+	/**
+	 * @return a classificacaoIMC
+	 */
+	public classificacaoIMC getClassificacaoIMC() {
+		if(this.getIMC() < 20.1){
+			return classificacaoIMC.MAGREZA;
+		}
+		if(this.getIMC() >= 20.1 && this.getIMC() <= 25.0){
+			return classificacaoIMC.ADEQUADO;
+		}
+		if(this.getIMC() > 25.0 && this.getIMC() <= 29.0){
+			return classificacaoIMC.EXCESSO_DE_PESO;
+		}
+		if(this.getIMC() > 29.0){
+			return classificacaoIMC.OBESIDADE;
+		}
+		return null;
 	}
 
 
