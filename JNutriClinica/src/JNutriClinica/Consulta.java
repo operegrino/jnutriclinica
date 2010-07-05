@@ -5,14 +5,13 @@ import java.util.Calendar;
 /**
  * Classe Consulta
  * 
- * @author Antônio Ricardo e Laércio Vitorino
+ * @author Antonio Ricardo e Laercio Vitorino
  * 
  * @version 1.2
  *
  */
 
 public class Consulta {
-	
 	private Paciente paciente;
 	private Anamnese anamnese;
 	private String fatorAtividade;

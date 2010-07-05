@@ -1,19 +1,20 @@
 package JNutriClinica;
 
+
+
 import java.util.Calendar;
 
 /**
  * 
  * Classe Pessoa.
  * 
- * @author Antônio Ricardo e Laércio Vitorino
+ * @author Antonio Ricardo e Laercio Vitorino
  * 
  * @version 1.2
  * 
  */
 
 public class Pessoa {
-
 	private String nome;
 	protected int idade;
 	private String cpf;
@@ -26,7 +27,7 @@ public class Pessoa {
 	private final int MAIOR_IDADE = 65;
 	
 	/**
-	 * Construtor. Cria uma pessoa a partir dos atributos passados como parâmetros.
+	 * Construtor. Cria uma pessoa a partir dos atributos passados como parametros.
 	 * 
 	 * @param nome
 	 * 			O nome da pessoa.
@@ -86,9 +87,9 @@ public class Pessoa {
 	}
 	
 	/**
-	 * Recupera o endereço da pessoa.
+	 * Recupera o endereco da pessoa.
 	 * 
-	 * @return O endereço da pessoa.
+	 * @return O endereco da pessoa.
 	 */
 	public String getEndereco() {
 		return endereco;
@@ -134,7 +135,7 @@ public class Pessoa {
 	 * @param novaIdade
 	 * 			A idade da pessoa.
 	 * @throws Exception
-	 * 			Lanca uma excecao caso a idade passada como parâmetro seja negativa.
+	 * 			Lanca uma excecao caso a idade passada como parametro seja negativa.
 	 */
 	public void setIdade(int novaIdade) throws Exception {
 		if (novaIdade < 0) 
@@ -149,7 +150,7 @@ public class Pessoa {
 	 * @param novoCpf
 	 * 			O CPF da pessoa.
 	 * @throws Exception
-	 * 			Lanca uma exceção caso o CPF passado como parametro seja nulo, vazio, se seu tamanho for menor ou maior que 11 ou se seu
+	 * 			Lanca uma excecao caso o CPF passado como parametro seja nulo, vazio, se seu tamanho for menor ou maior que 11 ou se seu
 	 * 			formato não bater com o formato padrao de CPF.
 	 */
 	public void setCpf(String novoCpf) throws Exception {
@@ -165,7 +166,7 @@ public class Pessoa {
 	 * @param novoEndereco
 	 * 			O endereco da pessoa.
 	 * @throws Exception
-	 * 			Lanca uma excecao caso o endereço passado como parametro seja nulo ou vazio.
+	 * 			Lanca uma excecao caso o endereco passado como parametro seja nulo ou vazio.
 	 */
 	public void setEndereco(String novoEndereco) throws Exception {
 		if (novoEndereco == null || novoEndereco == "") 
@@ -180,7 +181,7 @@ public class Pessoa {
 	 * @param novaData
 	 * 			A data de nascimento da pessoa.
 	 * @throws Exception
-	 * 			Lança uma exceção caso a data passada como parâmetro seja nula.
+	 * 			Lança uma excecao caso a data passada como parâmetro seja nula.
 	 */
 	public void setDataDeNascimento(Calendar novaData) throws Exception {
 		if (novaData == null)
@@ -190,13 +191,13 @@ public class Pessoa {
 	}
 	
 	/**
-	 * Seta o número de telefone da pessoa.
+	 * Seta o numero de telefone da pessoa.
 	 * 
 	 * @param novoTelefone
-	 * 			O número de telefone da pessoa.
+	 * 			O numero de telefone da pessoa.
 	 * @throws Exception
-	 * 			Lança uma exceção caso o número de telefone passado como parâmetro seja nulo, vazio, ou se possuir mais que ou menos que
-	 * 			8 dígitos.
+	 * 			Lancaa uma excecao caso o numero de telefone passado como parametro seja nulo, vazio, ou se possuir mais que ou menos que
+	 * 			8 digitos.
 	 */
 	public void setTelefone(String novoTelefone) throws Exception {
 		if (novoTelefone == null || novoTelefone.equals("") || novoTelefone.length() < 8 || novoTelefone.length() > 8)
@@ -212,7 +213,7 @@ public class Pessoa {
 	 * 		O CPF da pessoa.
 	 * @return O CPF da pessoa no formato: XXX.XXX.XXX-XX
 	 * @throws Exception
-	 * 			Lança uma exceção caso o CPF passado como parâmetro seja nulo, vazio, se seu tamanho for menor ou maior que 11 ou se seu
+	 * 			Lança uma exceção caso o CPF passado como parametro seja nulo, vazio, se seu tamanho for menor ou maior que 11 ou se seu
 	 * 			formato não bater com o formato padrão de CPF. 
 	 */
 	private String formataCpf(String cpf) throws Exception {
@@ -223,20 +224,20 @@ public class Pessoa {
 	}
 	
 	/**
-	 * Transforma o número do telefone da pessoa para o formato: XXXX-XXXX.
+	 * Transforma o numero do telefone da pessoa para o formato: XXXX-XXXX.
 	 * 
 	 * @param telefone
-	 * 			O número do telefone da pessoa.
-	 * @return O número do telefone da pessoa no formato: XXXX-XXXX.
+	 * 			O numero do telefone da pessoa.
+	 * @return O numero do telefone da pessoa no formato: XXXX-XXXX.
 	 */
 	private String formataTelefone(String telefone) {
 		return (telefone.substring(0, 4) + "-" + telefone.substring(4, 8));
 	}
 
 	/**
-	 * Verifica se a pessoa é considerada Criança.
+	 * Verifica se a pessoa eh considerada Crianca.
 	 * 
-	 * @return True caso a pessoa seja considerada criança, False caso contrário.
+	 * @return True caso a pessoa seja considerada crianca, False caso contrario.
 	 */
 	public boolean isCrianca() {
 		if (idade < IDADE_ADULTA_JOVEM)
@@ -246,9 +247,9 @@ public class Pessoa {
 	}
 
 	/**
-	 * Verifica se a pessoa é considerada Idosa.
+	 * Verifica se a pessoa eh considerada Idosa.
 	 * 
-	 * @return True caso a pessoa seja considerada idosa, False caso contrário.
+	 * @return True caso a pessoa seja considerada idosa, False caso contrario.
 	 */
 	public boolean isIdoso() {
 		if (idade >= MAIOR_IDADE)
@@ -259,9 +260,9 @@ public class Pessoa {
 	}
 
 	/**
-	 * Verifica se a pessoa é considerada Adulta/Jovem.
+	 * Verifica se a pessoa eh considerada Adulta/Jovem.
 	 * 
-	 * @return True caso a pessoa seja considerada Adulta/Jovem, False caso contrário.
+	 * @return True caso a pessoa seja considerada Adulta/Jovem, False caso contrario.
 	 */
 	public boolean isAdultoJovem() {
 		if (IDADE_ADULTA_JOVEM <= idade && idade < IDADE_ADULTA) {
@@ -271,9 +272,9 @@ public class Pessoa {
 	}
 
 	/**
-	 * Verifica se pessoa é considerada Adulta.
+	 * Verifica se pessoa eh considerada Adulta.
 	 * 
-	 * @return True caso a pessoa seja considerada Adulta, False caso contrário.
+	 * @return True caso a pessoa seja considerada Adulta, False caso contrario.
 	 */
 	public boolean isAdulto() {
 		if (IDADE_ADULTA <= idade && idade < MAIOR_IDADE) {
@@ -303,4 +304,5 @@ public class Pessoa {
 	public Anamnese getAnamnese() {
 		return anamnese;
 	}
+
 }
