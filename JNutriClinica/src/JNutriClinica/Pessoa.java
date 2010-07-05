@@ -4,6 +4,8 @@ package JNutriClinica;
 
 import java.util.Calendar;
 
+import JNutriClinica.Anamnese.patologiaChave;
+
 /**
  * 
  * Classe Pessoa.
@@ -43,19 +45,20 @@ public class Pessoa {
 	 * 			O telefone da pessoa.
 	 * @param anamnese
 	 * 			A anamnese da pessoa.
+	 * @throws Exception 
 	 * @throws Exception
 	 * 			Lanca excecao caso algum dos valores passados como parametros sejam nulos ou vazios.
 	 */
 	public Pessoa(String nome, int idade, String cpf, String endereco,
 			Calendar dataDeNascimento, String telefone, Anamnese anamnese) throws Exception{
 		
-		setNome(nome);
-		setIdade(idade);
-		setCpf(cpf);
-		setEndereco(endereco);
-		setDataDeNascimento(dataDeNascimento);
-		setTelefone(telefone);
-		setAnamnese(anamnese);			
+			setNome(nome);
+			setIdade(idade);
+			setCpf(cpf);
+			setEndereco(endereco);
+			setDataDeNascimento(dataDeNascimento);
+			setTelefone(telefone);
+			setAnamnese(anamnese);		
 
 	}
 	
@@ -291,7 +294,7 @@ public class Pessoa {
 	 */
 	public void setAnamnese(Anamnese anamnese) throws Exception {
 		if (anamnese == null)
-			throw new Exception("Anamnese invalida");
+			throw new IllegalArgumentException("Anamnese invalida");
 		
 		this.anamnese = anamnese;
 	}

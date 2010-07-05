@@ -16,15 +16,15 @@ public class Anamnese {
 	private double cintura;
 	private double quadril;
 	private String sintomasGI;
-	private String patologiaChave;
+	private patologiaChave patologiaChave;
 	private boolean tomaMedicamentos;
 	private int medicacoesPorDia;
 
-	public Anamnese(double pesoUsual, double pesoIdeal, boolean perdeuPeso,
+	public Anamnese(double pesoUsual, boolean perdeuPeso,
 			double cintura, double quadril, String sintomasGI,
-			String patologiaChave, boolean tomaMedicamentos,
-			int medicacoesPorDia) {
-		try {
+			patologiaChave patologiaChave, boolean tomaMedicamentos,
+			int medicacoesPorDia) throws Exception {
+		
 			setPesoUsual(pesoUsual);
 			setPerdeuPeso(perdeuPeso);
 			setCintura(cintura);
@@ -33,9 +33,7 @@ public class Anamnese {
 			setPatologiaChave(patologiaChave);
 			setTomaMedicamentos(tomaMedicamentos);
 			setMedicacoesPorDia(medicacoesPorDia);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
 		
 	}
 
@@ -62,11 +60,7 @@ public class Anamnese {
 	 *            altera o boolean perdeuPeso
 	 */
 	public void setPerdeuPeso(boolean perdeuPeso) {
-		if (perdeuPeso == false) {
-			this.perdeuPeso = true;
-		} else {
-			this.perdeuPeso = false;
-		}
+		this.perdeuPeso = perdeuPeso;
 
 	}
 
@@ -84,7 +78,10 @@ public class Anamnese {
 	 * @param sintomasGastrointestinais
 	 *            Altera os sintomasGI para um novo sintomasGI
 	 */
-	public void setSintomasGI(String sintomasGI) {
+	public void setSintomasGI(String sintomasGI)throws Exception {
+		if(sintomasGI == null || sintomasGI == ""){
+			throw new Exception("Campo Invalido.");
+		}
 		this.sintomasGI = sintomasGI;
 	}
 
@@ -99,7 +96,7 @@ public class Anamnese {
 	 * @param patologiaChave
 	 *            altera a patologiaChave para uma nova patologiaChave
 	 */
-	public void setPatologiaChave(String patologiaChave) {
+	public void setPatologiaChave(patologiaChave patologiaChave) {
 		this.patologiaChave = patologiaChave;
 	}
 
@@ -107,7 +104,7 @@ public class Anamnese {
 	 * 
 	 * @return a patologiaChave
 	 */
-	public String getPatologiaChave() {
+	public patologiaChave getPatologiaChave() {
 		return patologiaChave;
 	}
 
@@ -183,9 +180,9 @@ public class Anamnese {
 	 * @param quadril
 	 *            Altera a medida do quadril de um Paciente para uma nova medida.
 	 */
-	public void setQuadril(double quadril) {
+	public void setQuadril(double quadril)throws Exception {
 		if(quadril <= 0){
-			throw new IllegalArgumentException("Valor incorreto.");
+			throw new IllegalArgumentException("valor invalido.");
 		}
 		this.quadril = quadril;
 	}
