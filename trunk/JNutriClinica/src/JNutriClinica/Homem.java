@@ -5,6 +5,8 @@ import java.util.Calendar;
 import JNutriClinica.Anamnese.atividadeFisica;
 
 
+
+
 /**
  * Classe Homem que herda da classe Pessoa e implementa a Interface Paciente.
  * 
@@ -15,7 +17,8 @@ import JNutriClinica.Anamnese.atividadeFisica;
 
 public class Homem extends Pessoa implements Paciente {
 	
-	private atividadeFisica atividadeFisica;
+	public atividadeFisica atividadeFisica;
+	
 	
 	/**
 	 * Construtor que cria um homem com os atributos abaixo.
@@ -42,18 +45,19 @@ public class Homem extends Pessoa implements Paciente {
 		super(nome, idade, cpf, endereco, dataDeNascimento, telefone, anamnese);
 		
 		setAtividadeFisica(atividadeFisica);
+		
 
 	}
-
+	
 	/**
 	 * 
-	 * Enum com os tipos de atividade fisica que um homem pode apresentar.
+	 * Enum dos tipos de classificacao em relacao ao IMC de um Homem.
 	 *
 	 */
-	public enum fatorAtividadeFisica{
-		LEVE, MODERADA, INTENSA, APOSENTADA;
+	
+	public enum classificacaoIMC{
+		MAGREZA, ADEQUADO, EXCESSO_DE_PESO, OBESIDADE
 	}
-
 	
 	/**
 	 * Recupera o IMC(Indice de Massa Corporea) do homem.
@@ -70,7 +74,7 @@ public class Homem extends Pessoa implements Paciente {
 	/**
 	 * Recupera o peso teorico do homem.
 	 * 
-	 * @return O peso teorico do homem.
+	 * @return O peso ideal para este Homem.
 	 */
 	@Override
 	public double getPesoTeorico() {
@@ -139,19 +143,38 @@ public class Homem extends Pessoa implements Paciente {
 
 	@Override
 	public double getFatorAtividadeFisica() {
-		if (atividadeFisica.equals(fatorAtividadeFisica.LEVE)){
+		if (atividadeFisica.equals(atividadeFisica.LEVE)){
 			return 1.55;
 		}
-		else if (atividadeFisica.equals(fatorAtividadeFisica.MODERADA)){
+		else if (atividadeFisica.equals(atividadeFisica.MODERADA)){
 			return 1.78;
 		}
-		else if (atividadeFisica.equals(fatorAtividadeFisica.INTENSA)){
+		else if (atividadeFisica.equals(atividadeFisica.INTENSA)){
 			return 2.10;
 		}
-		else if (atividadeFisica.equals(fatorAtividadeFisica.APOSENTADA)){
+		else if (atividadeFisica.equals(atividadeFisica.APOSENTADO)){
 			return 1.51;
 		}
 		return 0;
+	}
+
+	/**
+	 * @return a classificacaoIMC
+	 */
+	public classificacaoIMC getClassificacaoIMC() {
+		if(this.getIMC() < 20.1){
+			return classificacaoIMC.MAGREZA;
+		}
+		if(this.getIMC() >= 20.1 && this.getIMC() <= 25.0){
+			return classificacaoIMC.ADEQUADO;
+		}
+		if(this.getIMC() > 25.0 && this.getIMC() <= 29.0){
+			return classificacaoIMC.EXCESSO_DE_PESO;
+		}
+		if(this.getIMC() > 29.0){
+			return classificacaoIMC.OBESIDADE;
+		}
+		return null;
 	}
 
 
