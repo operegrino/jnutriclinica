@@ -10,7 +10,6 @@ package JNutriClinica;
  */
 
 public class Anamnese {
-
 	private double pesoUsual;
 	private double pesoIdeal;
 	private double altura;
@@ -26,15 +25,19 @@ public class Anamnese {
 			double cintura, double quadril, String sintomasGI,
 			String patologiaChave, boolean tomaMedicamentos,
 			int medicacoesPorDia) {
-		setPesoUsual(pesoUsual);
-		setPesoIdeal(pesoIdeal);
-		setPerdeuPeso(perdeuPeso);
-		setCintura(cintura);
-		setQuadril(quadril);
-		setSintomasGI(sintomasGI);
-		setPatologiaChave(patologiaChave);
-		setTomaMedicamentos(tomaMedicamentos);
-		setMedicacoesPorDia(medicacoesPorDia);
+		try {
+			setPesoUsual(pesoUsual);
+			setPesoIdeal(pesoIdeal);
+			setPerdeuPeso(perdeuPeso);
+			setCintura(cintura);
+			setQuadril(quadril);
+			setSintomasGI(sintomasGI);
+			setPatologiaChave(patologiaChave);
+			setTomaMedicamentos(tomaMedicamentos);
+			setMedicacoesPorDia(medicacoesPorDia);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -43,7 +46,7 @@ public class Anamnese {
 	 *            altera o peso usual para um novo peso.
 	 */
 	public void setPesoUsual(double pesoUsual)throws Exception {
-		if(pesoUsual =< 0){
+		if(pesoUsual <= 0){
 			throw new Exception("valor invalido.");
 		}
 		this.pesoUsual = pesoUsual;
@@ -61,7 +64,7 @@ public class Anamnese {
 	 *            altera o peso ideal para um novo peso.
 	 */
 	public void setPesoIdeal(double pesoIdeal)throws Exception {
-		if(pesoIdeal =< 0){
+		if(pesoIdeal <= 0 ){
 			throw new Exception("valor invalido.");
 		}
 		this.pesoIdeal = pesoIdeal;

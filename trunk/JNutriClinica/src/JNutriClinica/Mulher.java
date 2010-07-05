@@ -1,81 +1,67 @@
 package JNutriClinica;
 
+
 import java.util.Calendar;
+
+import JNutriClinica.Anamnese.atividadeFisica;
+
+
 
 /**
  * Classe Mulher, que herda da classe Pessoa e implementa a Interface Paciente.
  * 
- * @author Antônio Ricardo e Laércio Vitorino
+ * @author Antonio Ricardo e Laercio Vitorino
  * 
- * @version 1.2
- *
+ * @version 1.3
+ * 
  */
 
 public class Mulher extends Pessoa implements Paciente {
-	
-	private final double ATIVIDADE_LEVE = 1.56;
-	private final double ATIVIDADE_MODERADA = 1.64;
-	private final double ATIVIDADE_INTENSA = 1.82;
-	private final double APOSENTADO = 1.51;
-	
+
+	private atividadeFisica atividadeFisica;
+
 	/**
 	 * Construtor que cria uma mulher com os atributos abaixo.
 	 * 
 	 * @param nome
-	 * 			O nome da mulher.
+	 *            O nome da mulher.
 	 * @param idade
-	 * 			A idade da mulher.
+	 *            A idade da mulher.
 	 * @param cpf
-	 * 			O cpf da mulher.
+	 *            O cpf da mulher.
 	 * @param endereco
-	 * 			O endereço da mulher.
+	 *            O endereço da mulher.
 	 * @param dataDeNascimento
-	 * 			A data de nascimento da mulher.
+	 *            A data de nascimento da mulher.
 	 * @param telefone
-	 * 			O telefone da mulher.
+	 *            O telefone da mulher.
 	 * @param anamnese
-	 * 			A anamnese da mulher.
+	 *            A anamnese da mulher.
 	 * @throws Exception
-	 * 			Lança uma exceção caso algum dos atributos sejam nulos ou vazios.
+	 *             Lanca uma excecao caso algum dos atributos sejam nulos ou
+	 *             vazios.
 	 */
 	public Mulher(String nome, int idade, String cpf, String endereco,
 			Calendar dataDeNascimento, String telefone, Anamnese anamnese)
 			throws Exception {
 		super(nome, idade, cpf, endereco, dataDeNascimento, telefone, anamnese);
-		
+
+		setAtividadeFisica(atividadeFisica);
 	}
-	
+
+
+
 	/**
 	 * 
-	 * Enum com os tipos de atividade física que uma mulher pode apresentar.
-	 *
+	 * Enum com os tipos de atividade fisica que uma mulher pode apresentar.
+	 * 
 	 */
-	public enum fatorAtividadeFisica{
+	public enum fatorAtividadeFisica {
 		LEVE, MODERADA, INTENSA, APOSENTADA;
 	}
-	
+
 	/**
-	 * Recupera o fator da atividade física da mulher.
-	 * 
-	 * @return O fator da atividade física da mulher.
-	 */
-	@Override
-	public double getFatorAtividadeFisica(){
-		if (fatorAtividadeFisica.LEVE)
-			return ATIVIDADE_LEVE;
-		
-		else if (fatorAtividadeFisica.MODERADA)
-			return ATIVIDADE_MODERADA;
-		
-		else if (fatorAtividadeFisica.INTENSA)
-			return ATIVIDADE_INTENSA;
-		
-		else
-			return APOSENTADO;
-	}
-	
-	/**
-	 * Recupera o IMC(Índice de Massa Corpórea) da mulher.
+	 * Recupera o IMC(Indice de Massa Corporea) da mulher.
 	 * 
 	 * @return O IMC da mulher.
 	 */
@@ -84,35 +70,34 @@ public class Mulher extends Pessoa implements Paciente {
 		return getAnamnese().getPesoUsual()
 				/ (anamnese.getAltura() * anamnese.getAltura());
 	}
-	
+
 	/**
-	 * Recupera o peso teórico da mulher.
+	 * Recupera o peso teorico da mulher.
 	 * 
-	 * @return O peso teórico da mulher.
+	 * @return O peso teorico da mulher.
 	 */
 	@Override
 	public double getPesoTeorico() {
 		return (anamnese.getAltura() * anamnese.getAltura()) * 20.8;
 	}
 
-	
 	// Nao ha, no momento, uma forma de implementar este metodo. Faltam dados.
 	@Override
 	public double getPregasCutaneas() {
 		return 0;
 	}
-	
+
 	/**
-	 * Recupera a relação Cintura-Quadril da mulher.
+	 * Recupera a relacao Cintura-Quadril da mulher.
 	 * 
-	 * @return A relação Cintura-Quadril da mulher.
+	 * @return A relacao Cintura-Quadril da mulher.
 	 */
 	@Override
 	public double getRelacaoCinturaQuadril() {
 
 		return anamnese.getCintura() / anamnese.getQuadril();
 	}
-	
+
 	/**
 	 * Recupera a TMB(Taxa de Metabolismo Basal) da mulher.
 	 * 
@@ -131,14 +116,46 @@ public class Mulher extends Pessoa implements Paciente {
 		}
 		return 0;
 	}
-	
+
 	/**
-	 * Recupera o VET(Valor Energético Total) da mulher.
+	 * Recupera o VET(Valor Energetico Total) da mulher.
 	 * 
 	 * @return O VET da mulher.
 	 */
 	@Override
 	public double getVET() {
-		return getTMB()*getFatorAtividadeFisica();
+		return getTMB() * getFatorAtividadeFisica();
 	}
+
+	@Override
+	public atividadeFisica getAtividadeFisica() {
+		return atividadeFisica;
+		
+		
+	}
+	
+	public void setAtividadeFisica(atividadeFisica atividadeFisica){
+		this.atividadeFisica = atividadeFisica; 
+	}
+
+	@Override
+	public double getFatorAtividadeFisica() {
+		if (atividadeFisica.equals(fatorAtividadeFisica.LEVE)){
+			return 1.56;
+		}
+		else if (atividadeFisica.equals(fatorAtividadeFisica.MODERADA)){
+			return 1.64;
+		}
+		else if (atividadeFisica.equals(fatorAtividadeFisica.INTENSA)){
+			return 1.82;
+		}
+		else if (atividadeFisica.equals(fatorAtividadeFisica.APOSENTADA)){
+			return 1.51;
+		}
+		return 0;
+	}
+
+
+	
+
 }

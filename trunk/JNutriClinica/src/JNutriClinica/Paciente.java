@@ -1,5 +1,7 @@
 package JNutriClinica;
 
+import JNutriClinica.Anamnese.atividadeFisica;
+
 /**
  * 
  * Interface Paciente implementada pelas classes Homem e Mulher.
@@ -10,8 +12,6 @@ package JNutriClinica;
  */
 
 public interface Paciente {
-
-	
 	/**
 	 * Calcula o Indice de massa corporea do Paciente.
 	 * 
@@ -69,10 +69,13 @@ public interface Paciente {
 	
 	
 	/**
-	 * Retorna uma constante em relacao a Intensidade que o Paciente frequenta sua atividade fisica.
+	 * Retorna uma indicacao da Intensidade em que o Paciente pratica uma Atividade Fisica.
 	 * 
-	 * @return
+	 * @return atividadeFisica
 	 */
-	public double getAtividadeFisica();
+	public atividadeFisica getAtividadeFisica();
 	
+	
+	
+
 }
