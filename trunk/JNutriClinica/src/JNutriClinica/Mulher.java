@@ -43,9 +43,9 @@ public class Mulher extends Pessoa implements Paciente {
 	 *             vazios.
 	 */
 	public Mulher(String nome, int idade, String cpf, String endereco,
-			Calendar dataDeNascimento, String telefone, Anamnese anamnese, atividadeFisica atividadeFisica)
+			Calendar dataDeNascimento, String telefone, atividadeFisica atividadeFisica)
 			throws Exception {
-		super(nome, idade, cpf, endereco, dataDeNascimento, telefone, anamnese);
+		super(nome, idade, cpf, endereco, dataDeNascimento, telefone);
 
 		setAtividadeFisica(atividadeFisica);
 	}

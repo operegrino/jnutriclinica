@@ -1,7 +1,5 @@
 package JNutriClinica;
 
-import Anamnese;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -16,9 +14,7 @@ public class Sistema {
 	public void criaPaciente(String nome, int idade, String cpf, String endereco,
 			Calendar dataDeNascimento, String telefone, Anamnese anamnese, String genero) throws IOException{
 		
-		Pessoa paciente;
 		if(genero == "masc"){
-			paciente = new Homen()
 		}
 		bd.atualizaBD(users);
 	}
