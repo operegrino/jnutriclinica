@@ -41,14 +41,12 @@ public class Pessoa {
 	 * 			A data de nascimento da pessoa.
 	 * @param telefone
 	 * 			O telefone da pessoa.
-	 * @param anamnese
-	 * 			A anamnese da pessoa.
 	 * @throws Exception 
 	 * @throws Exception
 	 * 			Lanca excecao caso algum dos valores passados como parametros sejam nulos ou vazios.
 	 */
 	public Pessoa(String nome, int idade, String cpf, String endereco,
-			Calendar dataDeNascimento, String telefone, Anamnese anamnese) throws Exception{
+			Calendar dataDeNascimento, String telefone) throws Exception{
 		
 			setNome(nome);
 			setIdade(idade);
@@ -56,7 +54,7 @@ public class Pessoa {
 			setEndereco(endereco);
 			setDataDeNascimento(dataDeNascimento);
 			setTelefone(telefone);
-			setAnamnese(anamnese);		
+				
 
 	}
 	

@@ -40,9 +40,9 @@ public class Homem extends Pessoa implements Paciente {
 	 * @throws Exception
 	 */
 	public Homem(String nome, int idade, String cpf, String endereco,
-			Calendar dataDeNascimento, String telefone, Anamnese anamnese,atividadeFisica atividadeFisica)
+			Calendar dataDeNascimento, String telefone,atividadeFisica atividadeFisica)
 			throws Exception {
-		super(nome, idade, cpf, endereco, dataDeNascimento, telefone, anamnese);
+		super(nome, idade, cpf, endereco, dataDeNascimento, telefone);
 		
 		setAtividadeFisica(atividadeFisica);
 		
