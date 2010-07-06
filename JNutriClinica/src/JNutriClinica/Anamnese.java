@@ -20,12 +20,13 @@ public class Anamnese {
 	private boolean tomaMedicamentos;
 	private int medicacoesPorDia;
 
-	public Anamnese(double pesoUsual, boolean perdeuPeso,
+	public Anamnese(double pesoUsual,double altura, boolean perdeuPeso,
 			double cintura, double quadril, String sintomasGI,
 			patologiaChave patologiaChave, boolean tomaMedicamentos,
 			int medicacoesPorDia) throws Exception {
 		
 			setPesoUsual(pesoUsual);
+			setAltura(altura);
 			setPerdeuPeso(perdeuPeso);
 			setCintura(cintura);
 			setQuadril(quadril);
@@ -150,12 +151,6 @@ public class Anamnese {
 	}
 
 
-
-	public double getAltura() {
-
-		return altura;
-	}
-
 	/**
 	 * @param cintura
 	 *            Altera a medida da cintura de um Paciente.
@@ -195,5 +190,30 @@ public class Anamnese {
 	public double getQuadril() {
 		return quadril;
 	}
+	
+	
+	/**
+	 * Metodo que retorna a altura do Paciente.
+	 * 
+	 * @return a altura do Paciente.
+	 */
+	
+	public double getAltura() {
 
+		return altura;
+	}
+
+
+	
+	/**
+	 * Metodo que altera a altura de um Paciente para uma nova altura.
+	 * @param altura
+	 * @throws Exception
+	 */
+	public void setAltura(double altura)throws Exception{
+		if(altura <= 0){
+			throw new Exception("valor invalido.");
+		}
+		this.altura = altura;
+	}
 }

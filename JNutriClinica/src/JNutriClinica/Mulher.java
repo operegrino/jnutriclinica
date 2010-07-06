@@ -19,7 +19,7 @@ import JNutriClinica.Anamnese.atividadeFisica;
 
 public class Mulher extends Pessoa implements Paciente {
 
-	private atividadeFisica atividadeFisica;
+	public atividadeFisica atividadeFisica;
 
 	/**
 	 * Construtor que cria uma mulher com os atributos abaixo.
@@ -43,7 +43,7 @@ public class Mulher extends Pessoa implements Paciente {
 	 *             vazios.
 	 */
 	public Mulher(String nome, int idade, String cpf, String endereco,
-			Calendar dataDeNascimento, String telefone, Anamnese anamnese)
+			Calendar dataDeNascimento, String telefone, Anamnese anamnese, atividadeFisica atividadeFisica)
 			throws Exception {
 		super(nome, idade, cpf, endereco, dataDeNascimento, telefone, anamnese);
 

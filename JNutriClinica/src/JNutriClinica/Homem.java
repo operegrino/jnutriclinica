@@ -17,7 +17,7 @@ import JNutriClinica.Anamnese.atividadeFisica;
 
 public class Homem extends Pessoa implements Paciente {
 	
-	public atividadeFisica atividadeFisica;
+	private atividadeFisica atividadeFisica;
 	
 	
 	/**
@@ -40,7 +40,7 @@ public class Homem extends Pessoa implements Paciente {
 	 * @throws Exception
 	 */
 	public Homem(String nome, int idade, String cpf, String endereco,
-			Calendar dataDeNascimento, String telefone, Anamnese anamnese)
+			Calendar dataDeNascimento, String telefone, Anamnese anamnese,atividadeFisica atividadeFisica)
 			throws Exception {
 		super(nome, idade, cpf, endereco, dataDeNascimento, telefone, anamnese);
 		
@@ -65,10 +65,14 @@ public class Homem extends Pessoa implements Paciente {
 	 * @return O IMC do homem.
 	 */
 	@Override
-	public double getIMC() {
-
-		return getAnamnese().getPesoUsual()
-				/ (anamnese.getAltura() * anamnese.getAltura());
+	public double getIMC() throws Exception{
+		double imc = getAnamnese().getPesoUsual()
+		/ (anamnese.getAltura() * anamnese.getAltura());
+		if(imc <=0 ){
+			throw new Exception("valor invalido");
+		}
+	
+		return imc;
 	}
 	
 	/**
@@ -161,7 +165,7 @@ public class Homem extends Pessoa implements Paciente {
 	/**
 	 * @return a classificacaoIMC
 	 */
-	public classificacaoIMC getClassificacaoIMC() {
+	public classificacaoIMC getClassificacaoIMC() throws Exception{
 		if(this.getIMC() < 20.1){
 			return classificacaoIMC.MAGREZA;
 		}

@@ -31,7 +31,7 @@ public class TestePessoa {
 
 	@Before
 	public void CriaPessoas() throws Exception {
-		anamnese = new Anamnese(80.0,false,88.4,70.2,"Dores no abdome", patologiaChave.CARDIOPATIA,true,3);
+		anamnese = new Anamnese(80.0,1.77,false,88.4,70.2,"Dores no abdome", patologiaChave.CARDIOPATIA,true,3);
 		pessoa1 = new Pessoa("Jose Antonio da Silva", 40, "12345678911", "Rua Nove de Novembro, Nº 235", new GregorianCalendar(1985, 01, 10), "91882525", anamnese);
 		pessoa2 = new Pessoa("Roberto Sousa do Nascimento", 46, "15709952112", "Rua Jose Agripino, Nº 36", new GregorianCalendar(1964, 03, 27), "88871265", anamnese);
 		pessoa3 = new Pessoa("Ana Julia Araujo", 67, "09858467418", "Rua Nove de Novembro, Nº 198", new GregorianCalendar(1942, 0, 12), "88371155", anamnese);
