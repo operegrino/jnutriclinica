@@ -4,8 +4,6 @@ package JNutriClinica;
 
 import java.util.Calendar;
 
-import JNutriClinica.Anamnese.patologiaChave;
-
 /**
  * 
  * Classe Pessoa.

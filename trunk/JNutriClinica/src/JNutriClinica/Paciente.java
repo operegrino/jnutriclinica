@@ -17,8 +17,9 @@ public interface Paciente {
 	 * Calcula o Indice de massa corporea do Paciente.
 	 * 
 	 * @return o Indice de massa corporea do paciente.
+	 * @throws Exception 
 	 */
-	public double getIMC();
+	public double getIMC() throws Exception;
 	
 	
 	/**
