@@ -2,6 +2,7 @@ package JNutriClinica;
 
 
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -25,7 +26,7 @@ public class Pessoa {
 	private final int IDADE_ADULTA_JOVEM = 18;
 	private final int IDADE_ADULTA = 30;
 	private final int MAIOR_IDADE = 65;
-	
+	private ArrayList<Diagnostico> diagnosticos;
 	/**
 	 * Construtor. Cria uma pessoa a partir dos atributos passados como parametros.
 	 * 
