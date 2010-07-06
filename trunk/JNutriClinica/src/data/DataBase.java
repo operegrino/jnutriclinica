@@ -1,5 +1,13 @@
 package data;
 
+/**
+ * Classe DataBase que gerencia o banco de dados.
+ * 
+ * @author Antonio Ricardo
+ * 
+ * @version 1.0
+ */
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
