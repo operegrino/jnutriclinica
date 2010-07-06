@@ -43,11 +43,10 @@ public class Mulher extends Pessoa implements Paciente {
 	 *             vazios.
 	 */
 	public Mulher(String nome, int idade, String cpf, String endereco,
-			Calendar dataDeNascimento, String telefone, atividadeFisica atividadeFisica)
+			Calendar dataDeNascimento, String telefone)
 			throws Exception {
 		super(nome, idade, cpf, endereco, dataDeNascimento, telefone);
 
-		setAtividadeFisica(atividadeFisica);
 	}
 
 
@@ -131,14 +130,13 @@ public class Mulher extends Pessoa implements Paciente {
 	public double getVET() {
 		return getTMB() * getFatorAtividadeFisica();
 	}
-
-	@Override
-	public atividadeFisica getAtividadeFisica() {
-		return atividadeFisica;
-		
-		
-	}
 	
+	
+	/**
+	 * Altera a atividade Fisica para uma nova Atividade Fisica
+	 * 
+	 * @param atividadeFisica
+	 */
 	public void setAtividadeFisica(atividadeFisica atividadeFisica){
 		this.atividadeFisica = atividadeFisica; 
 	}

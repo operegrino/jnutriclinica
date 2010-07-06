@@ -1,7 +1,5 @@
 package JNutriClinica;
 
-import JNutriClinica.Anamnese.atividadeFisica;
-
 
 /**
  * 
@@ -38,6 +36,8 @@ public interface Paciente {
 	public double getTMB();
 	
 	/**
+	 * Metodo que retorna uma constante em relacao a intensidade da atividade fisica praticada
+	 * pelo paciente.
 	 * 
 	 * @return o fator de atividade fisica.
 	 */
@@ -66,18 +66,7 @@ public interface Paciente {
 	 * 
 	 * @return a relacao cintura/quadril
 	 */
-	public double getRelacaoCinturaQuadril();
-	
-	
-	
-	/**
-	 * Retorna uma indicacao da Intensidade em que o Paciente pratica uma Atividade Fisica.
-	 * 
-	 * @return atividadeFisica
-	 */
-	public atividadeFisica getAtividadeFisica();
-	
-	
+	public double getRelacaoCinturaQuadril();	
 	
 
 }

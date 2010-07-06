@@ -19,11 +19,12 @@ public class Anamnese {
 	private patologiaChave patologiaChave;
 	private boolean tomaMedicamentos;
 	private int medicacoesPorDia;
+	private atividadeFisica atividadeFisica;
 
 	public Anamnese(double pesoUsual,double altura, boolean perdeuPeso,
 			double cintura, double quadril, String sintomasGI,
 			patologiaChave patologiaChave, boolean tomaMedicamentos,
-			int medicacoesPorDia) throws Exception {
+			int medicacoesPorDia, atividadeFisica atividadeFisica) throws Exception {
 		
 			setPesoUsual(pesoUsual);
 			setAltura(altura);
@@ -34,6 +35,7 @@ public class Anamnese {
 			setPatologiaChave(patologiaChave);
 			setTomaMedicamentos(tomaMedicamentos);
 			setMedicacoesPorDia(medicacoesPorDia);
+			
 
 		
 	}
@@ -215,5 +217,18 @@ public class Anamnese {
 			throw new Exception("valor invalido.");
 		}
 		this.altura = altura;
+	}
+
+	
+	
+	public void setAtividadeFisica(atividadeFisica atividadeFisica)throws Exception {
+		if(atividadeFisica == null){
+			throw new Exception("Campo atividade fisica estah invalido.");
+		}
+		this.atividadeFisica = atividadeFisica;
+	}
+
+	public atividadeFisica getAtividadeFisica() {
+		return atividadeFisica;
 	}
 }

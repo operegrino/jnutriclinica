@@ -17,7 +17,6 @@ import JNutriClinica.Anamnese.atividadeFisica;
 
 public class Homem extends Pessoa implements Paciente {
 	
-	private atividadeFisica atividadeFisica;
 	
 	
 	/**
@@ -40,13 +39,9 @@ public class Homem extends Pessoa implements Paciente {
 	 * @throws Exception
 	 */
 	public Homem(String nome, int idade, String cpf, String endereco,
-			Calendar dataDeNascimento, String telefone,atividadeFisica atividadeFisica)
+			Calendar dataDeNascimento, String telefone)
 			throws Exception {
-		super(nome, idade, cpf, endereco, dataDeNascimento, telefone);
-		
-		setAtividadeFisica(atividadeFisica);
-		
-
+		super(nome, idade, cpf, endereco, dataDeNascimento, telefone);		
 	}
 	
 	/**
@@ -133,30 +128,19 @@ public class Homem extends Pessoa implements Paciente {
 		return getTMB() * getFatorAtividadeFisica();
 	}
 	
-	@Override
-	public atividadeFisica getAtividadeFisica() {
-		return atividadeFisica;
-		
-		
-	}
-	
-	public void setAtividadeFisica(atividadeFisica atividadeFisica){
-		this.atividadeFisica = atividadeFisica; 
-	}
-
 
 	@Override
 	public double getFatorAtividadeFisica() {
-		if (atividadeFisica.equals(atividadeFisica.LEVE)){
+		if (getAnamnese().getAtividadeFisica().equals(atividadeFisica.LEVE)){
 			return 1.55;
 		}
-		else if (atividadeFisica.equals(atividadeFisica.MODERADA)){
+		else if (getAnamnese().getAtividadeFisica().equals(atividadeFisica.MODERADA)){
 			return 1.78;
 		}
-		else if (atividadeFisica.equals(atividadeFisica.INTENSA)){
+		else if (getAnamnese().getAtividadeFisica().equals(atividadeFisica.INTENSA)){
 			return 2.10;
 		}
-		else if (atividadeFisica.equals(atividadeFisica.APOSENTADO)){
+		else if (getAnamnese().getAtividadeFisica().equals(atividadeFisica.APOSENTADO)){
 			return 1.51;
 		}
 		return 0;
