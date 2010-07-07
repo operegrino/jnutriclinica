@@ -6,9 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import JNutriClinica.Anamnese.atividadeFisica;
-import JNutriClinica.Anamnese.patologiaChave;
-
 import data.DataBase;
 
 /**
@@ -64,19 +61,6 @@ public class Sistema {
 			throw new Exception("Pessoa nao cadastrada.");
 		}
 		bd.atualizaBD(pessoas);
-	}
-	
-	public void consultar(Pessoa pessoa,double pesoUsual,double altura, boolean perdeuPeso,
-			double cintura, double quadril, String sintomasGI,
-			patologiaChave patologiaChave, boolean tomaMedicamentos,
-			int medicacoesPorDia, atividadeFisica atividadeFisica) throws Exception{
-		
-		Anamnese anamnese = new Anamnese(pesoUsual, altura, perdeuPeso, cintura,quadril,sintomasGI,
-			patologiaChave,tomaMedicamentos,
-			medicacoesPorDia, atividadeFisica);
-		
-		pessoa.setAnamnese(anamnese);
-		
 	}
 	
 }

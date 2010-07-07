@@ -17,7 +17,7 @@ import JNutriClinica.Anamnese.atividadeFisica;
  * 
  */
 
-public class Mulher extends Pessoa implements Paciente {
+public class Mulher extends Pessoa {
 
 	public atividadeFisica atividadeFisica;
 
@@ -47,20 +47,6 @@ public class Mulher extends Pessoa implements Paciente {
 			throws Exception {
 		super(nome, idade, cpf, endereco, dataDeNascimento, telefone);
 
-	}
-
-
-
-
-	
-	/**
-	 * 
-	 * Enum dos tipos de classificacao em relacao ao IMC de uma Mulher.
-	 *
-	 */
-	
-	public enum classificacaoIMC{
-		MAGREZA, ADEQUADO, EXCESSO_DE_PESO, OBESIDADE
 	}
 	
 
@@ -161,7 +147,8 @@ public class Mulher extends Pessoa implements Paciente {
 	/**
 	 * @return a classificacaoIMC
 	 */
-	public classificacaoIMC getClassificacaoIMC() {
+	@Override
+	public classificacaoIMC getClassificacaoIMC() throws Exception{
 		if(this.getIMC() < 20.1){
 			return classificacaoIMC.MAGREZA;
 		}
