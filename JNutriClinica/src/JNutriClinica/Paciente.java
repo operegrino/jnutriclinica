@@ -70,4 +70,5 @@ public interface Paciente {
 	
 
 	public JNutriClinica.Pessoa.classificacaoIMC getClassificacaoIMC() throws Exception;
+	
 }

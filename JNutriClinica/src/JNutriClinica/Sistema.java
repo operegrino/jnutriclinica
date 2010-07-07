@@ -22,16 +22,22 @@ public class Sistema {
 	public ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
 	DataBase bd = DataBase.getInstance();
 	
-	public void criaPaciente(String nome, int idade, String cpf, String endereco,
+	public void criaPessoa(String nome, int idade, String cpf, String endereco,
 			Calendar dataDeNascimento, String telefone, Anamnese anamnese, String genero) throws Exception{
+	
 		if(genero == "masculino"){
-			Homem paciente = new Homem(nome,idade,cpf,endereco,dataDeNascimento,telefone);
+			Homem pessoa = new Homem(nome,idade,cpf,endereco,dataDeNascimento,telefone);
+			pessoas.add(pessoa);
+			bd.atualizaBD(pessoas);
 		}else if(genero == "feminino"){
-			Mulher paciente = new Mulher(nome,idade,cpf,endereco,dataDeNascimento,telefone);
+			Mulher pessoa = new Mulher(nome,idade,cpf,endereco,dataDeNascimento,telefone);
+			pessoas.add(pessoa);
+			bd.atualizaBD(pessoas);
 		}
+		
 	}
 	
-	public Pessoa buscaPaciente(String cpf) throws IOException{
+	public Pessoa buscaPessoa(String cpf) throws IOException{
 		for(Pessoa pessoa : pessoas){
 			if(pessoa.getCpf() == cpf){
 				return pessoa;
@@ -41,7 +47,7 @@ public class Sistema {
 		return null;
 	}
 	
-	public void updatePaciente(Pessoa pessoa,String nome, int idade, String cpf, String endereco,
+	public void updatePessoa(Pessoa pessoa,String nome, int idade, String cpf, String endereco,
 			Calendar dataDeNascimento, String telefone, Anamnese anamnese) throws Exception{
 			pessoa.setAnamnese(anamnese);
 			pessoa.setCpf(cpf);
@@ -53,7 +59,7 @@ public class Sistema {
 		bd.atualizaBD(pessoas);
 	}
 	
-	public void deletaPaciente(Pessoa pessoa) throws Exception{
+	public void deletaPessoa(Pessoa pessoa) throws Exception{
 		for(Pessoa p : pessoas){
 			if(p.equals(pessoa)){
 				pessoas.remove(pessoa);
