@@ -2,6 +2,9 @@ package JNutriClinica;
 
 import java.util.Calendar;
 
+import JNutriClinica.Anamnese.atividadeFisica;
+import JNutriClinica.Anamnese.patologiaChave;
+
 /**
  * Classe Consulta
  * 
@@ -12,12 +15,13 @@ import java.util.Calendar;
  */
 
 public class Consulta {
-	private Paciente paciente;
+	private Pessoa pessoa;
 	private Anamnese anamnese;
 	private String fatorAtividade;
 	private String motivoDaConsulta;
 	private Calendar dataDaConsulta;
 	private Calendar dataDeRetorno;
+	
 	
 	/**
 	 * @param fatorAtividade
@@ -25,11 +29,10 @@ public class Consulta {
 	 * @param dataDaConsulta
 	 * @param dataDeRetorno
 	 */
-	public Consulta(Paciente paciente, Anamnese anamnese, String fatorAtividade, String motivoDaConsulta, Calendar dataDaConsulta,
-			Calendar dataDeRetorno){
+	public Consulta(Pessoa pessoa, String fatorAtividade, String motivoDaConsulta, 
+			Calendar dataDaConsulta, Calendar dataDeRetorno){
 		try{
-		setPaciente(paciente);
-		setAnamnese(anamnese);
+		setPessoa(pessoa);
 		setFatorAtividade(fatorAtividade);
 		setMotivoDaConsulta(motivoDaConsulta);
 		setDataDaConsulta(dataDaConsulta);
@@ -38,30 +41,6 @@ public class Consulta {
 			e.printStackTrace();
 		}
 		
-	}
-
-
-	/**
-	 * Altera o Paciente para um novo paciente.
-	 * 
-	 * @param paciente the paciente to set
-	 */
-	public void setPaciente(Paciente paciente)throws Exception {
-		if(paciente == null){
-			throw new IllegalArgumentException("paciente invalido.");
-		}
-		this.paciente = paciente;
-	}
-
-
-	/**
-	 * Acessa este Paciente.
-	 * 
-	 * 
-	 * @return o paciente.
-	 */
-	public Paciente getPaciente() {
-		return paciente;
 	}
 
 
@@ -155,6 +134,55 @@ public class Consulta {
 	 */
 	public Calendar getDataDeRetorno() {
 		return dataDeRetorno;
+	}
+
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+
+
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+	
+	public Diagnostico geraDiagnostico(Pessoa pessoa)throws Exception{
+		if(pessoa.getAnamnese() == null){
+			throw new Exception("Pessoa nao possui Anamnese");
+		}
+		
+		return null;
+		
+	}
+	
+	
+	/**
+	 * Cria uma Anamnese para a Pessoa.
+	 * 
+	 * @param pessoa
+	 * @param pesoUsual
+	 * @param altura
+	 * @param perdeuPeso
+	 * @param cintura
+	 * @param quadril
+	 * @param sintomasGI
+	 * @param patologiaChave
+	 * @param tomaMedicamentos
+	 * @param medicacoesPorDia
+	 * @param atividadeFisica
+	 * @throws Exception
+	 */
+	public void geraAnamnese(Pessoa pessoa,double pesoUsual,double altura, boolean perdeuPeso,
+			double cintura, double quadril, String sintomasGI,
+			patologiaChave patologiaChave, boolean tomaMedicamentos,
+			int medicacoesPorDia, atividadeFisica atividadeFisica) throws Exception{
+		
+		Anamnese anamnese = new Anamnese(pesoUsual, altura, perdeuPeso, cintura,quadril,sintomasGI,
+			patologiaChave,tomaMedicamentos,
+			medicacoesPorDia, atividadeFisica);
+		
+		pessoa.setAnamnese(anamnese);
+		
 	}
 	
 	

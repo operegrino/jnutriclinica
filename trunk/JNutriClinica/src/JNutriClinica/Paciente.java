@@ -69,4 +69,5 @@ public interface Paciente {
 	public double getRelacaoCinturaQuadril();	
 	
 
+	public JNutriClinica.Pessoa.classificacaoIMC getClassificacaoIMC() throws Exception;
 }

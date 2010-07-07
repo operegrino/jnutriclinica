@@ -15,7 +15,7 @@ import JNutriClinica.Anamnese.atividadeFisica;
  *@version 1.3
  */
 
-public class Homem extends Pessoa implements Paciente {
+public class Homem extends Pessoa{
 	
 	
 	
@@ -44,15 +44,7 @@ public class Homem extends Pessoa implements Paciente {
 		super(nome, idade, cpf, endereco, dataDeNascimento, telefone);		
 	}
 	
-	/**
-	 * 
-	 * Enum dos tipos de classificacao em relacao ao IMC de um Homem.
-	 *
-	 */
-	
-	public enum classificacaoIMC{
-		MAGREZA, ADEQUADO, EXCESSO_DE_PESO, OBESIDADE
-	}
+
 	
 	/**
 	 * Recupera o IMC(Indice de Massa Corporea) do homem.

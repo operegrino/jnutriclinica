@@ -15,7 +15,7 @@ import java.util.Calendar;
  * 
  */
 
-public class Pessoa {
+public class Pessoa implements Paciente {
 	private String nome;
 	protected int idade;
 	private String cpf;
@@ -303,6 +303,64 @@ public class Pessoa {
 	 */
 	public Anamnese getAnamnese() {
 		return anamnese;
+	}
+
+	@Override
+	public double getFatorAtividadeFisica() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getIMC() throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getPesoTeorico() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getPregasCutaneas() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getRelacaoCinturaQuadril() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getTMB() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getVET() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public classificacaoIMC getClassificacaoIMC() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	/**
+	 * 
+	 * Enum dos tipos de classificacao em relacao ao IMC de uma Mulher.
+	 *
+	 */
+	
+	public enum classificacaoIMC{
+		MAGREZA, ADEQUADO, EXCESSO_DE_PESO, OBESIDADE
 	}
 
 }
