@@ -1,0 +1,1 @@
+O JNutriClinica tem a finalidade de auxiliar o profissional de nutrição com suas consultas em sua clínica. Dependendo de informações cadastrais de cada paciente, o JNutriClinica deverá gerar a porcentagem de carboidratos, proteínas e lipídios para cada dieta específica e ainda exibir relatório dos pacientes.
